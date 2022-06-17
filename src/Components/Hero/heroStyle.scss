@@ -1,0 +1,54 @@
+.top {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url(../../images/background_50.PNG);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center 100px;
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      .title {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-size: calc(4.375rem + 3.5vw);
+      }
+
+      .job-1 {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-size: calc(0.875rem + 0.5vw);
+        opacity: 80%;
+      }
+
+      .job-2 {
+        font-size: calc(1.275rem + 0.5vw);
+      }
+
+      .job-3 {
+        opacity: 40%;
+      }
+
+      .title-1{
+        position: absolute;
+        top: 58%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-size: calc(4.375rem + 3.5vw);
+      }
+    }
+  }
