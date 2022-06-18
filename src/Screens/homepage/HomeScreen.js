@@ -24,9 +24,9 @@ const HomeScreen = () => {
                 <h4>Graphics</h4>
             </div> */}
 
-            <div className='work-with-me'>
+            {/* <div className='work-with-me'>
                 <h1>Work With Me</h1>
-            </div>
+            </div> */}
         </div>
     )
 }

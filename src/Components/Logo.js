@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 const Container = styled.div`
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
 
     width: 100%;
     color: ${props=> props.theme.text};
@@ -31,17 +28,9 @@ const Container = styled.div`
         }
     }
 `
-
-const Text = styled(motion.span)`
-    font-size: ${props => props.theme.fontlg};
-    color: ${props => props.theme.text};
-    padding-bottom: 0.5rem;
-`
-
 const Logo = () => {
   return (
     <Container>
-        <Link to='/'>
         <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
             <motion.path  initial={{
                 opacity: 0,
@@ -131,7 +120,6 @@ const Logo = () => {
             >
                 Wibe Studio
             </Text> */}
-        </Link>
     </Container>
   )
 }

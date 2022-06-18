@@ -8,8 +8,8 @@ import './headerStyle.scss'
 
 const Header = () => {
     return (
-        <div style={{marginBottom: "100px"}}>
-            <Navbar scrolling dark expand="lg" fixed="top">
+        <div>
+            <Navbar scrolling dark expand="lg" >
             <Container>
                 <Navbar.Brand href="/"><Logo /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

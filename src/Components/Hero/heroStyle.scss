@@ -6,49 +6,83 @@
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center 100px;
+    // animation: top-animation 2s ease-in-out;
+    height: auto;
+    width: 100vw;
 
-    .text{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
       .title {
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: 6%;
         left: 0;
         right: 0;
         z-index: 1;
         font-size: calc(4.375rem + 3.5vw);
       }
 
-      .job-1 {
+      .text{
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        font-size: calc(0.875rem + 0.5vw);
-        opacity: 80%;
-      }
+          top: 30%;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
 
-      .job-2 {
-        font-size: calc(1.275rem + 0.5vw);
-      }
+        .job-1 {
+          font-size: calc(0.875rem + 0.5vw);
+          opacity: 80%;
+          margin-bottom: 2rem;
+        }
 
-      .job-3 {
-        opacity: 40%;
+        .job-2 {
+          font-size: calc(1.275rem + 0.5vw);
+          margin-bottom: 2rem;
+        }
+
+        .job-3 {
+          opacity: 40%;
+        }
       }
 
       .title-1{
         position: absolute;
-        top: 58%;
+        top: 32%;
         left: 0;
         right: 0;
         z-index: 1;
         font-size: calc(4.375rem + 3.5vw);
       }
-    }
   }
+
+@keyframes top-animation {
+  0% {
+    background-image: none;
+  }
+
+  10% {
+    background-image: url(../../images/background_50.PNG);
+    opacity: 10%;
+  }
+
+  // 30% {
+  //   background-image: url(../../images/background_50.PNG);
+  //   opacity: 30%;
+  // }
+
+  // 50% {
+  //   background-image: url(../../images/background_50.PNG);
+  //   opacity: 50%;
+  // }
+
+  // 70% {
+  //   background-image: url(../../images/background_50.PNG);
+  //   opacity: 70%;
+  // }
+
+  100% {
+    background-image: url(../../images/background_50.PNG);
+  }
+}
