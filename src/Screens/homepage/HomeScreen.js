@@ -1,4 +1,5 @@
 import Hero from '../../Components/Hero/Hero'
+import Projects from '../../Components/projects/Projects'
 import WebsiteComponent from '../../Components/website-section/WebsiteComponent'
 import './homepageStyle.scss'
 
@@ -6,6 +7,7 @@ const HomeScreen = () => {
     return (
         <div className='homepage'>
             <Hero />
+            <Projects />
             {/* <div className='top'>
                 <h1 className="title">Twyla</h1>
                 <div className='text'>

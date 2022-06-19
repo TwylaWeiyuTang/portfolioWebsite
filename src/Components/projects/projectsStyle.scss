@@ -1,0 +1,18 @@
+.projects {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-size: 3rem;
+        position: absolute;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+}

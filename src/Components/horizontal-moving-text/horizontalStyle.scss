@@ -1,0 +1,22 @@
+.wrapper{
+    position:fixed;
+    width:150%;
+    height:50px;
+    left:50%;
+    top:60%;
+    // background:grey;
+    overflow:hidden;
+  }
+  .wrapper .box{
+    position:absolute;
+    width: fit-content;
+    height:50px;
+    font-size:40px;
+    font-weight:600;
+    line-height:50px;
+    text-align:center;
+  }
+  .wrapper .boxes {
+    position:relative;
+    left:-250px;
+}
