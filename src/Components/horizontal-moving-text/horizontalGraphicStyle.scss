@@ -1,13 +1,13 @@
-.wrapper{
+.wrapper-graphic{
     position:relative;
     width:150%;
     height:50px;
-    left:50%;
-    transform: translateY(-450%);
+    right:50%;
+    transform: translateY(520%);
     // background:grey;
-    z-index: 0;
+    z-index: -2;
   }
-  .wrapper .box{
+  .wrapper-graphic .box-graphic{
     position:absolute;
     width: fit-content;
     height:50px;
@@ -16,7 +16,7 @@
     line-height:50px;
     text-align:center;
   }
-  .wrapper .boxes {
+  .wrapper-graphic .boxes-graphic {
     position:relative;
-    left:-250px;
+    left:-450px;
 }

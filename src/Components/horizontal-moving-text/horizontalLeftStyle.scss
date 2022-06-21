@@ -3,7 +3,7 @@
     width:150%;
     height:50px;
     right:50%;
-    transform: translateY(510%);
+    transform: translateY(520%);
     // background:grey;
     z-index: -2;
   }
@@ -11,12 +11,12 @@
     position:absolute;
     width: fit-content;
     height:50px;
-    font-size:40px;
+    font-size:5rem;
     font-weight:600;
     line-height:50px;
     text-align:center;
   }
   .wrapper-left .boxes-left {
     position:relative;
-    left:-250px;
+    left:-450px;
 }

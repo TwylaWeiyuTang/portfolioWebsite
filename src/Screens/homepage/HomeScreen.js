@@ -5,7 +5,7 @@ import './homepageStyle.scss'
 
 const HomeScreen = () => {
     return (
-        <div className='homepage'>
+        <div className='homepage cursor-scale small'>
             <Hero />
             <Projects />
             {/* <div className='top'>

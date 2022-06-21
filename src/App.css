@@ -9,3 +9,19 @@ a {
   color: inherit !important;
 }
 
+.cursor{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: linear-gradient(0deg, rgba(79, 50, 255, 0.8), rgba(79, 50, 255, 0.8)), linear-gradient(180deg, #8D7AFF 0%, rgba(149, 132, 255, 0) 100%);
+  box-shadow: 0px 0px 18.92px rgba(164, 149, 255, 0.7), 0px 0px 73.21px rgba(164, 149, 255, 0.5), inset 0px 0px 7.32px #A495FF;
+  filter: blur(0.3px);
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1000;
+}
+

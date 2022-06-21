@@ -1,13 +1,13 @@
-import React, {useRef, useLayoutEffect} from 'react'
-import HorizontalText from '../../horizontal-moving-text/HorizontalText'
-import './webDevelopmentStyle.scss'
-import styled from 'styled-components'
+import React, {useLayoutEffect, useRef} from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from "gsap/all";
-import img1 from '../../../images/empireThumbnail.png'
-
+import { ScrollTrigger } from 'gsap/all'
+import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import HorizontalLeft from '../../horizontal-moving-text/HorizontalLeft'
+import HorizontalText from '../../horizontal-moving-text/HorizontalText'
+import img1 from '../../../images/empireThumbnail.png'
+import './graphicDesignStyle.scss'
+import HorizontalGraphic from '../../horizontal-moving-text/HorizontalGraphic'
 
 const Section = styled.section`
     position: relative;
@@ -15,6 +15,8 @@ const Section = styled.section`
     width: 100vw;
     margin: 0 auto;
     overflow: hidden;
+    background-color: white;
+    color: black;
 
     display: flex;
     justify-content: center;
@@ -72,6 +74,7 @@ const Item = styled(motion.div)`
 
         h4 {
             visibility: visible;
+            color: white;
         }
     }
 `
@@ -86,47 +89,47 @@ const Product = ({img, title='', href}) => {
     )
 }
 
-const WebDevelopment = () => {
+const GraphicDesign = () => {
     gsap.registerPlugin(ScrollTrigger);
-    const ref = useRef(null)
-    const horizontalRef = useRef(null)
+    const graphicRef = useRef(null)
+    const graphicHorizontalRef = useRef(null)
 
     useLayoutEffect(() => {
-      let element = ref.current
-      let scrollingElement = horizontalRef.current
+      let element1 = graphicRef.current
+      let scrollingElement1 = graphicHorizontalRef.current
 
-      let pinWrapWidth = scrollingElement.offsetWidth
+      let pinWrapWidth1 = scrollingElement1.offsetWidth
 
-      let tl = gsap.timeline()
+      let tl1 = gsap.timeline()
 
       setTimeout(() => {
-          tl.to(element, {
+          tl1.to(element1, {
               scrollTrigger: {
-                  trigger: element,
+                  trigger: element1,
                   start: 'top top',
-                  end: pinWrapWidth,
+                  end: pinWrapWidth1 * 3,
                   scroller: '.App', // locomotive element
                   scrub: true,
                   pin: true,
                   // markers: true
               },
               // we need to increase the scrolling height of this element same as scrolling width
-              height: `${scrollingElement.scrollWidth}px`,
+              height: `${scrollingElement1.scrollWidth}px`,
               ease: 'none',
           })
 
           // horizontal scrolling
-          tl.to(scrollingElement, {
+          tl1.to(scrollingElement1, {
               scrollTrigger: {
-                  trigger: scrollingElement,
+                  trigger: scrollingElement1,
                   start: 'top top',
-                  end: pinWrapWidth,
+                  end: pinWrapWidth1 * 3,
                   scroller: '.App', // locomotive element
                   scrub: true,
                   // markers: true
               },
               // we need to increase the scrolling height of this element same as scrolling width
-              x: -pinWrapWidth,
+              x: -pinWrapWidth1,
               ease: 'none',
           })
 
@@ -135,16 +138,16 @@ const WebDevelopment = () => {
 
       return () => {
           // Let's clear instances
-          tl.kill()
+          tl1.kill()
           ScrollTrigger.kill()
       }
   })
 
   return (
-    <div className='web-dev'>
-        <Section ref={ref} id='shop'>
-        <HorizontalText text={"Website \u00a0  •"}/>
-      <Right ref={horizontalRef}>
+    <div className='graphic-design'>
+        <Section ref={graphicRef} id='shop'>
+        <HorizontalText text={"Graphic \u00a0  •"}/>
+      <Right ref={graphicHorizontalRef}>
           <Product img={img1} title='Empire Clinic' href='/work-empire-clinic-website'/>
           <Product img={img1} title='About us' />
           <Product img={img1} title='Contact' />
@@ -156,10 +159,9 @@ const WebDevelopment = () => {
           <Product img={img1} title='Ozone therapy' />
           
       </Right>
-      <HorizontalLeft text={"Development \u00a0  •"} boxWid={610} numOfBoxes={6} />
+      <HorizontalGraphic text={"Design \u00a0  •"} />
   </Section>
     </div>
   )
 }
-
-export default WebDevelopment
+export default GraphicDesign

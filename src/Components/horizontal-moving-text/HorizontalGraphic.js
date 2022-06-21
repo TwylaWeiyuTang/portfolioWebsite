@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import './horizontalLeftStyle.scss'
+import './horizontalGraphicStyle.scss'
 
-const HorizontalLeft = ({text}) => {
+const HorizontalGraphic = ({text}) => {
 
     useEffect(() => {
-        gsap.set('.wrapper-left',{xPercent:-50,yPercent:-50})
+        gsap.set('.wrapper-graphic',{xPercent:-50,yPercent:-50})
         // gsap.set('#no02',{y:50})
         // gsap.set('#no03',{y:120})
 
-        var boxWidth = 610,
+        var boxWidth = 370,
             totalWidth = boxWidth * 6,  //  * n of boxes
-            no02 = document.querySelectorAll("#no02 .box-left"),
+            no02 = document.querySelectorAll("#no02 .box-graphic"),
             // no02 = document.querySelectorAll("#no02 .box"),
             // no03 = document.querySelectorAll("#no03 .box"),
             dirFromLeft = "+=" + totalWidth,
@@ -45,15 +45,15 @@ const HorizontalLeft = ({text}) => {
             })
     return (
         <>
-        <div id="no02" class="wrapper-left">
-        <div class="boxes-left">
-            <div class="box-left">{text}</div>
-            <div class="box-left">{text} </div>
-            <div class="box-left">{text} </div>
-            <div class="box-left">{text} </div>
-            <div class="box-left">{text} </div>
-            <div class="box-left">{text} </div>
-            <div class="box-left">{text} </div>
+        <div id="no02" class="wrapper-graphic">
+        <div class="boxes-graphic">
+            <div class="box-graphic">{text}</div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
         </div>
         </div>
 
@@ -84,4 +84,4 @@ const HorizontalLeft = ({text}) => {
     )
 }
 
-export default HorizontalLeft;
+export default HorizontalGraphic;

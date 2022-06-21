@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import './horizontalStyle.scss'
 
-const HorizontalText = () => {
+const HorizontalText = ({text}) => {
 
     useEffect(() => {
         gsap.set('.wrapper',{xPercent:-50,yPercent:-50})
         // gsap.set('#no02',{y:50})
         // gsap.set('#no03',{y:120})
 
-        var boxWidth = 485,
+        var boxWidth = 420,
             totalWidth = boxWidth * 5,  //  * n of boxes
             no01 = document.querySelectorAll("#no01 .box"),
             // no02 = document.querySelectorAll("#no02 .box"),
             // no03 = document.querySelectorAll("#no03 .box"),
-            dirFromLeft = "+=" + totalWidth,
-            dirFromRight = "-=" + totalWidth;
+            dirFromLeft = "+=" + totalWidth
 
         var mod = gsap.utils.wrap(0, totalWidth);
 
@@ -47,13 +46,13 @@ const HorizontalText = () => {
         <>
         <div id="no01" class="wrapper">
         <div class="boxes">
-            <div class="box">Website &nbsp; Development &nbsp; •</div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
-            <div class="box">Website &nbsp; Development &nbsp; • </div>
+            <div class="box">{text}</div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
         </div>
         </div>
 
