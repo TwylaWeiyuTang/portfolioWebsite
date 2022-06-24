@@ -3,4 +3,9 @@
   font-family: "Urbanist", sans-serif;
   margin-inline-start: 4vw;
   font-weight: 300;
+  transition: all 0.5s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
 }

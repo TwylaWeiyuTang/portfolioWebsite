@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes, useLocation} from 'react-router-dom';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
@@ -11,9 +11,12 @@ import ContactPage from './Screens/contact/ContactPage';
 import HomeScreen from './Screens/homepage/HomeScreen';
 import WorkEmpire from './Screens/website-empire-clinic/WorkEmpire';
 import ScrollTriggerProxy from './Components/ScrollTriggerProxy';
+import About from './Screens/about/About';
+import Footer from './Components/footer/Footer';
 
 function App() {
   const containerRef = useRef(null)
+  const location = useLocation()
 
   useLayoutEffect(() => {
     let cursor = document.querySelector('.cursor');
@@ -76,13 +79,17 @@ cursorScale.forEach(link => {
         <ScrollTriggerProxy />
         <AnimatePresence>
         <main className='App' data-scroll-container ref={containerRef}>
-        <div className="cursor"></div>
+        {/* <div className="cursor"></div> */}
         <Header className='cursor-scale' />
         <Routes>
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />
           <Route path='/contact' element={<ContactPage />} />
+          <Route path='/about-me' element={<About />} />
         </Routes>
+        {location.pathname !== "/about-me" ? (
+          <Footer />
+        ) : null}
         </main>
         </AnimatePresence>
       </LocomotiveScrollProvider>

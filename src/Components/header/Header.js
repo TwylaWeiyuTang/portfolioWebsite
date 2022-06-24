@@ -8,7 +8,7 @@ import './headerStyle.scss'
 
 const Header = () => {
     return (
-        <div>
+        <div className='header'>
             <Navbar scrolling dark expand="lg" >
             <Container>
                 <Navbar.Brand href="/"><Logo /></Navbar.Brand>
@@ -16,7 +16,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
                     <Nav.Link as={HashLink} to="/#work" className='header-items'>Work</Nav.Link>
-                    <Nav.Link as={Link} to="/about" className='header-items'>About</Nav.Link>
+                    <Nav.Link as={Link} to="/about-me" className='header-items'>About</Nav.Link>
                     <Nav.Link as={Link} to="/contact" className=' header-items'>Contact</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

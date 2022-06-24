@@ -1,0 +1,367 @@
+$context: frontend  !default;
+
+// Path is relative to the stylesheets directory.
+$assets-path: "../"  !default;
+
+// Typefaces
+// =============================================================================
+$font-sans-serif: Arial, sans-serif;
+
+// Typography
+// =============================================================================
+// Base
+$font-size:   16px;
+$line-height: 24px / $font-size;
+$font-family: $font-sans-serif;
+$color:       #222222;
+// Headings
+$font-size-h1:  13.5vw  !default;
+$font-size-h2:  32px  !default;
+$font-size-h3:  24px  !default;
+$font-size-h4:  16px  !default;
+$font-size-h5:  16px  !default;
+$font-size-h6:  15px  !default;
+$line-height-h: $line-height;
+// Weights
+$light:  300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold:   700;
+
+// Transitions
+// =============================================================================
+$speed:  0.3s;
+$bounce: cubic-bezier(0.17, 0.67, 0.3, 1.33);
+$Power1EaseOut: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$Power2EaseOut: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$Power3EaseOut: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$Power4EaseOut: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$Power1EaseIn: cubic-bezier(0.550, 0.085, 0.680, 0.530) ;
+$Power2EaseIn: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$Power3EaseIn: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$Power4EaseIn: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$ExpoEaseOut: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$ExpoEaseIn: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$ExpoEaseInOut: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$SineEaseOut: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$SineEaseIn: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$Power1EaseInOut: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$Power2EaseInOut: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$Power3EaseInOut: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$Power4EaseInOut: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$SlowEaseOut: cubic-bezier(.04,1.15,0.4,.99);
+$easing: $Power2EaseOut;
+
+
+// Spacing Units
+// =============================================================================
+$unit:       60px;
+$unit-small: 40px;
+
+// Container
+// ==========================================================================
+$container-width: 1440px;
+$padding:         $unit;
+
+// Breakpoints
+// =============================================================================
+$from-tiny:     500px              !default;
+$to-tiny:       $from-tiny - 1     !default;
+$from-small:    700px              !default;
+$to-small:      $from-small - 1    !default;
+$from-medium:   1000px             !default;
+$to-medium:     $from-medium - 1   !default;
+$from-large:    1200px             !default;
+$to-large:      $from-large - 1    !default;
+$from-big:      1400px             !default;
+$to-big:        $from-big - 1      !default;
+$from-huge:     1600px             !default;
+$to-huge:       $from-huge - 1     !default;
+$from-enormous: 1800px             !default;
+$to-enormous:   $from-enormous - 1 !default;
+$from-gigantic: 2000px             !default;
+$to-gigantic:   $from-gigantic - 1 !default;
+$from-colossal: 2400px             !default;
+$to-colossal:   $from-colossal - 1 !default;
+
+@function em($size, $base: $font-size) {
+    @if (type-of($size) == number) {
+        @if (unit($size) != "px") {
+            @error "`#{$size}` needs to be a pixel value.";
+        }
+    } @else {
+        @error "`#{$size}` needs to be a number.";
+    }
+
+    @if (type-of($base) == number) {
+        @if (unit($base) != "px") {
+            @error "`#{$base}` needs to be a pixel value.";
+        }
+    } @else {
+        @error "`#{$base}` needs to be a number.";
+    }
+
+    @return ($size / $base) * 1em;
+}
+
+//
+// Converts the given pixel value to its REM quivalent.
+//
+// @param  {Number} $size                     - The pixel value to convert.
+// @param  {Number} $base [$font-size] - The assumed base font size.
+// @return {Number} Scalable pixel value in REMs.
+//
+@function rem($size, $base: $font-size) {
+    @if (type-of($size) == number) {
+        @if (unit($size) != "px") {
+            @error "`#{$size}` needs to be a pixel value.";
+        }
+    } @else {
+        @error "`#{$size}` needs to be a number.";
+    }
+
+    @if (type-of($base) == number) {
+        @if (unit($base) != "px") {
+            @error "`#{$base}` needs to be a pixel value.";
+        }
+    } @else {
+        @error "`#{$base}` needs to be a number.";
+    }
+
+    @return ($size / $base) * 1rem;
+}
+
+//
+// Converts a number to a percentage.
+//
+// @alias  percentage()
+// @link   http://sassdoc.com/annotations/#alias
+// @param  {Number} $number - The value to convert.
+// @return {Number} A percentage.
+//
+@function span($number) {
+    @return percentage($number);
+}
+
+//
+// Checks if a list contains a value(s).
+//
+// @link   https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/validators/_contains.scss
+// @param  {List} $list   - The list to check against.
+// @param  {List} $values - A single value or list of values to check for.
+// @return {Boolean}
+// @access private
+//
+@function list-contains(
+    $list,
+    $values...
+) {
+    @each $value in $values {
+        @if type-of(index($list, $value)) != "number" {
+            @return false;
+        }
+    }
+
+    @return true;
+}
+
+.c-section {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+
+    @media (max-width: $to-large) {
+        padding-bottom: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    @media (min-width: $from-large) {
+        margin-bottom: 35vh;
+    }
+}
+
+.c-section_infos {
+    position: absolute;
+    z-index: 0;
+    text-align: left;
+
+    h3 {
+        width: 40vw;
+        line-height: 3rem;
+    }
+
+    p{
+        width: 40vw;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+    }
+}
+
+.c-section_infos_inner {
+    > * {
+        opacity: 0;
+        transform: translateY(5vh) !important;
+        padding-left: 2rem;
+        margin-top: 2rem;
+        transition: opacity 0.6s $easing, transform 0.6s $easing;
+    }
+
+    &.is-inview {
+        > * {
+            opacity: 1;
+            transform: none;
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}){
+                    transition-delay: $i*0.06s;
+                }
+            }
+        }
+    }
+}
+
+.c-sections_infos_text {
+    margin-top: rem(20px);
+}
+
+.c-image {
+    opacity: 0;
+    transition: opacity 0.6s $easing;
+
+    &.is-inview {
+        opacity: 1;
+        transition-delay: 0.6s;
+    }
+}
+
+.o-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: rem($container-width + (40px*2));
+    margin-bottom: 3rem;
+}
+
+.o-layout {
+
+    // Gutter modifiers
+    &.-gutter {
+        margin-left: rem(-$unit);
+    }
+
+    &.-gutter-small {
+        margin-left: rem(-$unit/2);
+    }
+
+    // Horizontal alignment modifiers
+    &.-center {
+        text-align: center;
+    }
+
+    &.-right {
+        text-align: right;
+    }
+
+    &.-reverse {
+        direction: rtl;
+
+        &.-flex {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &.-flex {
+         display: flex;
+
+         &.-top {
+            align-items: flex-start;
+         }
+         &.-middle {
+            align-items: center;
+         }
+         &.-bottom {
+            align-items: flex-end;
+         }
+    }
+    &.-stretch {
+        align-items: stretch;
+    }
+}
+
+.o-layout_item {
+
+    // Gutter modifiers
+    .o-layout.-gutter > & {
+        padding-left: rem($unit);
+    }
+
+    .o-layout.-gutter-small > & {
+        padding-left: rem($unit/2);
+    }
+
+    // Vertical alignment modifiers
+    .o-layout.-middle > & {
+        vertical-align: middle;
+    }
+
+    .o-layout.-bottom > & {
+        vertical-align: bottom;
+    }
+
+    // Horizontal alignment modifiers
+    .o-layout.-center > &,
+    .o-layout.-right > &,
+    .o-layout.-reverse > & {
+        text-align: left;
+    }
+
+    .o-layout.-reverse > & {
+        direction: ltr;
+    }
+}
+
+.c-fixed_wrapper {
+    position: relative;
+    overflow: hidden;
+
+    @media (min-width: $from-medium) {
+        height: 100vh;
+    }
+    @media (max-width: $to-medium) {
+        height: 50vh;
+    }
+}
+
+.c-fixed_target {
+    position: absolute;
+    top: -100vh;
+    bottom: -100vh;
+    right: 0;
+    left: 0;
+}
+
+.c-fixed {
+    position: absolute;
+    top: -100vh;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+
+    html:not(.has-scroll-smooth) & {
+        top: 0;
+    }
+
+    img {
+        width: 50vw;
+        float: right;
+        padding-right: 2rem;
+        height: 100vh;
+    }
+}
+
+
