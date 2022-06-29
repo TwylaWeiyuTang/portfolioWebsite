@@ -1,4 +1,5 @@
 .top {
+    visibility: hidden;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
@@ -30,6 +31,7 @@
           left: 0;
           right: 0;
           z-index: 1;
+          opacity: 1;
 
         .job-1 {
           font-size: calc(0.875rem + 0.5vw);
@@ -49,7 +51,7 @@
 
       .title-1{
         position: absolute;
-        top: 32%;
+        top: 53%;
         left: 0;
         right: 0;
         z-index: 1;

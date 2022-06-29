@@ -20,37 +20,12 @@ const Section = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-`
-
-const Left = styled.div`
-    width: 35%;
-    background-color: grey;
-
-    min-height: 100vh;
-    z-index: 5;
-
-    position: fixed;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    p {
-        font-size: ${props => props.theme.fontlg};
-        font-weight: 300;
-        padding-left: 2rem;
-        width: 80%;
-        margin: 0 auto;
-    }
 `
 
 const Right = styled.div`
     position: absolute;
     left: 5%;
     min-height: 100vh;
-
-    background-color: ${props => props.theme.grey};
     /* width: 65%; */
     display: flex;
     justify-content: flex-start;
@@ -59,7 +34,6 @@ const Right = styled.div`
     h2{
         width: 40rem;
         margin-right: 6rem;
-        color: black;
     }
 `
 
@@ -84,7 +58,6 @@ const Item = styled(motion.div)`
         font-weight: 500;
         text-align: justify;
         justify-content: center;
-        color: black;
         position: absolute;
         bottom: -10% !important;
 }
