@@ -3,15 +3,15 @@ import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
 import Logo from '../Logo';
-
+import { ReactComponent as TLogo } from '../../images/logoT.svg'
 import './headerStyle.scss'
 
-const Header = () => {
+const Header = ({color}) => {
     return (
         <div className='header'>
-            <Navbar scrolling dark expand="lg" >
+            <Navbar scrolling expand="lg" style={{backgroundColor: color}} >
             <Container>
-                <Navbar.Brand href="/"><Logo /></Navbar.Brand>
+                <Navbar.Brand href="/"><TLogo style={{width: "80%"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">

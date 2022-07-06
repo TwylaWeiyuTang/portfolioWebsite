@@ -1,8 +1,7 @@
-import React, {useEffect, useLayoutEffect, useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
 import './workEmpireStyles.scss'
 import styled from 'styled-components'
 import gsap from 'gsap'
-import locomotiveScroll from 'locomotive-scroll'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { motion } from 'framer-motion'
 
@@ -44,6 +43,13 @@ const Left = styled(motion.div)`
         font-weight: 300;
         width: 80%;
         margin: 0 auto;
+    }
+
+    a {
+      position: absolute;
+      bottom: 20%;
+      text-decoration: underline !important;
+      font-size: 2rem;
     }
 `
 
@@ -103,11 +109,11 @@ const WorkEmpire = () => {
           markers: true,
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#8E8B82', color: "#F3F3F3", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
           },
           
           onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#072227', color: "#bcb8ad", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#B85252', color: "#EADEDE", overwrite: "auto"})
           },
       }
       })
@@ -121,11 +127,11 @@ const WorkEmpire = () => {
           markers: true,
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#bcb8ad', color: '#343434', overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#EADEDE', color: '#B85252', overwrite: "auto"})
           },
           
           onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#8E8B82', overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', overwrite: "auto"})
           },
       }
       })
@@ -154,6 +160,8 @@ return () => {
             <p>
               Designed the entire website and implemented the design with React framework.
             </p>
+
+            <a href='https://www.empireclinic.it/' target='_blank' rel='noreferrer'>View It Live</a>
         </Left>
     </Section>
     <div ref={el => horizontalScrollRef = el}>
@@ -161,7 +169,7 @@ return () => {
     </div>
 
     <Section ref={el => bottomRef = el} >
-      <Website data-scroll data-scroll-speed="2"><a href='https://www.empireclinic.it/' target='_blank' rel='noreferrer'>https://www.empireclinic.it/</a></Website>
+      <Website data-scroll data-scroll-speed="2"><a href='https://www.empireclinic.it/' target='_blank' rel='noreferrer'>View It Live</a></Website>
     </Section>
     </div>
   )

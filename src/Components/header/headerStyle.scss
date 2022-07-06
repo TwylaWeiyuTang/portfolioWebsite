@@ -1,11 +1,15 @@
-.header-items {
-  color: white !important;
-  font-family: "Urbanist", sans-serif;
-  margin-inline-start: 4vw;
-  font-weight: 300;
-  transition: all 0.5s ease;
+.header {
 
-        &:hover {
-            transform: translateY(-5px);
-        }
+  .header-items {
+    color: white !important;
+    background-color: transparent;
+    font-family: "Urbanist", sans-serif;
+    margin-inline-start: 4vw;
+    font-weight: 300;
+    transition: all 0.5s ease;
+  
+          &:hover {
+              transform: translateY(-5px);
+          }
+  }
 }

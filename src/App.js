@@ -80,7 +80,9 @@ cursorScale.forEach(link => {
         <AnimatePresence>
         <main className='App' data-scroll-container ref={containerRef}>
         {/* <div className="cursor"></div> */}
-        <Header className='cursor-scale' />
+        {location.pathname !== "/about-me" ? (
+          <Header className='cursor-scale' color='black'/>
+        ) : <Header color='white' />}
         <Routes>
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />

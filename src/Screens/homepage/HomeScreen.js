@@ -1,13 +1,65 @@
+import React, {useRef, useEffect} from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 import Hero from '../../Components/Hero/Hero'
 import Projects from '../../Components/projects/Projects'
-import WebsiteComponent from '../../Components/website-section/WebsiteComponent'
 import './homepageStyle.scss'
+import Banner from '../../Components/banner/Banner'
 
 const HomeScreen = () => {
+    gsap.registerPlugin(ScrollTrigger);
+  let homeRef = useRef(null)
+
+  let projectRef = useRef(null)
+  let bannerRef = useRef(null)
+  
+
+  let tl = new gsap.timeline()
+
+  useEffect(() => {
+
+    setTimeout(() => {
+
+      tl.to(homeRef, {
+        scrollTrigger: {
+          trigger: bannerRef,
+          start:"top 100%",
+          end: "bottom",
+          scroller: '.App',
+          markers: true,
+          scrub: true,
+          onEnter: () => {
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#32746C', overwrite: "auto"})
+          },
+          
+          onLeaveBack: () => {
+            gsap.to('.App', { duration: 1.0, backgroundColor: 'black', color: "#EADEDE", overwrite: "auto"})
+          },
+      }
+      })
+    }, 1000)
+      ScrollTrigger.refresh()
+return () => {
+  // Let's clear instances
+  tl.kill()
+  ScrollTrigger.kill()
+}
+  }, [tl])
+
     return (
-        <div className='homepage cursor-scale small'>
-            <Hero />
+        <div className='homepage cursor-scale small' ref={el => homeRef = el}>
+            <div>
+                <Hero />
+            </div>
+
+            <div ref={el => bannerRef = el}>
+            <Banner />
+            </div>
+
+            <div ref={el => projectRef = el}>
             <Projects />
+            </div>
             {/* <div className='top'>
                 <h1 className="title">Twyla</h1>
                 <div className='text'>

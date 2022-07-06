@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import './aboutStyle.scss'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
@@ -7,115 +7,45 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import portrait from '../../images/portrait.jpg'
 
 const About = () => {
-    const ref = useRef(null)
-    const topRef = useRef(null)
-    const bottomRef = useRef(null)
+    let ref = useRef(null)
+    let topRef = useRef(null)
+    let bottomRef = useRef(null)
 
     gsap.registerPlugin(ScrollTrigger)
-
-  useEffect(() => {
-  }, [])
-
   
 
-    useLayoutEffect(() => {
-        let element = ref.current
-//         const scroller = new locomotiveScroll({
-//             el: element,
-//             smooth: true,
-//             getDirection: true
-//           });
+  let tl = new gsap.timeline()
+
+  useEffect(() => {
+
+    setTimeout(() => {
+
+      tl.to(ref, {
+        scrollTrigger: {
+          trigger: topRef,
+          start:"top 100%",
+          end: "bottom",
+          scroller: '.App',
+          markers: true,
+          scrub: true,
+          onEnter: () => {
+            gsap.to('.App', { duration: 1.0, backgroundColor: 'white', overwrite: "auto"})
+          },
           
-//         scroller.on("scroll", function (t) {
-//             document.documentElement.setAttribute("data-direction", t.direction);
-//           });
-        
-//           scroller.on("scroll", ScrollTrigger.update);
-    
-//         ScrollTrigger.scrollerProxy(element, {
-//             scrollTop(value) {
-//               return arguments.length
-//                 ? scroller.scrollTo(value, 0, 0)
-//                 : scroller.scroll.instance.scroll.y;
-//             },
-//             getBoundingClientRect() {
-//               return {
-//                 left: 0,
-//                 top: 0,
-//                 width: window.innerWidth,
-//                 height: window.innerHeight
-//               };
-//             },
-//             pinType: element.style.transform ? "transform" : "fixed"
-//           });
-    
-//         const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
-//         scrollColorElems.forEach((colorSection, i) => {
-//             const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
-//             const prevText = i === 0 ? "" : scrollColorElems[i - 1].dataset.textcolor;
-
-//             ScrollTrigger.create({
-//             trigger: colorSection,
-//             scroller: "[data-scroll-container]",
-//             start: "top 50%",
-//             onEnter: () =>
-//                 gsap.to(element, {
-//                 backgroundColor: colorSection.dataset.bgcolor,
-//                 color: colorSection.dataset.textcolor,
-//                 overwrite: "auto"
-//                 }),
-//             onLeaveBack: () =>
-//                 gsap.to(element, {
-//                 backgroundColor: prevBg,
-//                 color: prevText,
-//                 overwrite: "auto"
-//         })
-        
-//     });
-//     ScrollTrigger.addEventListener("refresh", () => scroller.update());
-
-//   ScrollTrigger.refresh();
-//   });
-setTimeout(() => {
-    ScrollTrigger.create({
-   
-        trigger: topRef.current,
-        markers:true,
-        start: 'top top',
-        end:"bottom 0%", 
-      
-        onEnter: () => {
-          gsap.to('body', { duration: 1.0, backgroundColor: '#bcb8ad'})
-        },
-        
-        onLeaveBack: () => {
-          gsap.to('body', { duration: 1.0, backgroundColor: '#ffffff'})
-        },
-      
-        
+          onLeaveBack: () => {
+            gsap.to('.App', { duration: 1.0, backgroundColor: 'white', color: "#EADEDE", overwrite: "auto"})
+          },
+      }
       })
-      
-      ScrollTrigger.create({
-        
-        trigger: bottomRef.current,
-        markers:true,
-        start:"top 50%",
-        end:"bottom 0%", 
-      
-        onEnter: () => {
-          gsap.to('body', { duration: 1.0, backgroundColor: '#e3857a'})
-        },
-        
-        onLeaveBack: () => {
-          gsap.to('body', { duration: 1.0, backgroundColor: '#ff0000'})
-        },
-      
-        
-      })
+    }, 1000)
       ScrollTrigger.refresh()
-}, 1000)
+return () => {
+  // Let's clear instances
+  tl.kill()
+  ScrollTrigger.kill()
+}
+  }, [tl])
 
-    })
   return (
     <div className='about' ref={ref}>
         <div className="c-section" data-scroll-section data-persistent>

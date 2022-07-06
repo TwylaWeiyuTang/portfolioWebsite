@@ -2,7 +2,9 @@ body {
   color: white !important;
   text-align: center !important;
   font-family: "Abril Fatface" !important;
+  background-color: inherit;
 }
+
 
 a {
   text-decoration: none !important;
@@ -25,3 +27,6 @@ a {
   z-index: 1000;
 }
 
+.font-face-L{
+  font-family: "Library3am";
+ }

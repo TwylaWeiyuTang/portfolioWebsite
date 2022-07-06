@@ -1,12 +1,18 @@
+@font-face {
+  font-family: "Library 3 am";
+  src: url(../../fonts/library-3-am-font/Library3am-5V3Z.otf),
+   local("Library 3 am") format("truetype");
+  }
+
 .top {
     visibility: hidden;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url(../../images/background_50.PNG);
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: center 100px;
+    // background-image: url(../../images/background_50.PNG);
+    // background-size: 40%;
+    // background-repeat: no-repeat;
+    // background-position: center 100px;
     // animation: top-animation 2s ease-in-out;
     height: auto;
     width: 100vw;
@@ -14,14 +20,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+
+    .text-strip-wrapper {
+      position:relative;
+      width:250%;
+      height:50px;
+      right:50%;
+      .texts {
+        position:relative;
+        left:-450px;
+
+        .strip-text {
+          fill: #eadede;
+          font-size: 2rem;
+          width: fit-content;
+          position:absolute;
+          text-align:center;
+        }
+      }
+    }
+
+      .ini-letters {
+        font-size: calc(10rem + 15vw);
+        font-family: 'Library 3 am';
+        position: absolute;
+        top: 9%;
+        right: 25%;
+        z-index: -1;
+      }
+
 
       .title {
         position: absolute;
-        top: 6%;
-        left: 0;
+        top: 18%;
         right: 0;
-        z-index: 1;
+        z-index: -1;
         font-size: calc(4.375rem + 3.5vw);
+        text-transform: uppercase;
+        font-family: 'Library 3 am';
+        text-align: right;
       }
 
       .text{

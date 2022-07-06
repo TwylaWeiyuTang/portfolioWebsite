@@ -14,8 +14,6 @@ const Section = styled.section`
     width: 100vw;
     margin: 0 auto;
     overflow: hidden;
-    background-color: white;
-    color: black;
 
     display: flex;
     justify-content: center;
@@ -35,7 +33,6 @@ const Right = styled.div`
     h2{
         width: 40rem;
         margin-right: 6rem;
-        color: black;
     }
 `
 
