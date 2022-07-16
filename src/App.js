@@ -81,8 +81,8 @@ cursorScale.forEach(link => {
         <main className='App' data-scroll-container ref={containerRef}>
         {/* <div className="cursor"></div> */}
         {location.pathname !== "/about-me" ? (
-          <Header className='cursor-scale' color='black'/>
-        ) : <Header color='white' />}
+          <Header className='cursor-scale' bgcolor='transparent' color='white' />
+        ) : <Header bgcolor='white' color='black' />}
         <Routes>
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />

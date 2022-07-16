@@ -27,10 +27,9 @@ const HomeScreen = () => {
           start:"top 100%",
           end: "bottom",
           scroller: '.App',
-          markers: true,
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#32746C', overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
           },
           
           onLeaveBack: () => {

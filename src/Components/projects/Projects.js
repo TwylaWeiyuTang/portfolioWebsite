@@ -24,14 +24,13 @@ const Projects = () => {
           start:"top 100%",
           end: "bottom",
           scroller: '.App',
-          markers: true,
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#32746C', color: "#EADEDE", overwrite: "auto"})
           },
           
           onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#32746C', color: "#EADEDE", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
           },
       }
       })
@@ -42,14 +41,13 @@ const Projects = () => {
           start:"top 100%",
           end: "bottom",
           scroller: '.App',
-          markers: true,
           scrub: true,
           onEnter: () => {
             gsap.to('.App', { duration: 1.0, backgroundColor: '#EADEDE', color: '#B85252', overwrite: "auto"})
           },
           
           onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#32746C', color: "#EADEDE", overwrite: "auto"})
           },
       }
       })

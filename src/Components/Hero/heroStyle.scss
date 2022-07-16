@@ -20,7 +20,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
 
     .text-strip-wrapper {
       position:relative;
@@ -53,13 +52,23 @@
 
       .title {
         position: absolute;
-        top: 18%;
+        top: 10%;
         right: 0;
         z-index: -1;
-        font-size: calc(4.375rem + 3.5vw);
+        font-size: calc(5.375rem + 4.5vw);
+        line-height: calc(6.375rem + 4.5vw);
         text-transform: uppercase;
-        font-family: 'Library 3 am';
         text-align: right;
+
+        display: inline-block;
+
+        color: #eadede;
+
+        span {
+          display: inline-block;
+          -webkit-text-stroke: 2px #eadede;
+          color: transparent;
+        }
       }
 
       .text{

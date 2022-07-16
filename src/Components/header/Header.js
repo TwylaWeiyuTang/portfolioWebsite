@@ -6,10 +6,10 @@ import Logo from '../Logo';
 import { ReactComponent as TLogo } from '../../images/logoT.svg'
 import './headerStyle.scss'
 
-const Header = ({color}) => {
+const Header = ({bgcolor, color}) => {
     return (
         <div className='header'>
-            <Navbar scrolling expand="lg" style={{backgroundColor: color}} >
+            <Navbar scrolling expand="lg" style={{backgroundColor: bgcolor, color: color}} >
             <Container>
                 <Navbar.Brand href="/"><TLogo style={{width: "80%"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

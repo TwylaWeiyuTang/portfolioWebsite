@@ -1,8 +1,9 @@
 body {
-  color: white !important;
+  color: #eadede !important;
   text-align: center !important;
   font-family: "Abril Fatface" !important;
   background-color: inherit;
+  overflow-x: hidden !important;
 }
 
 

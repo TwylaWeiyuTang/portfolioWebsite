@@ -1,0 +1,22 @@
+.draw-arrow{  
+    stroke: black; 
+    animation-fill-mode: forwards;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400; 
+    animation: draw 1.5s;
+    
+  }
+
+.tail-1 {
+    animation: draw .5s ;
+    animation-delay: 1.5s;
+  }
+.tail-2 {
+    animation: draw .5s ;
+    animation-delay: 2s;
+  }
+  @keyframes draw {
+    to {
+       stroke-dashoffset: 0;
+     }
+   }

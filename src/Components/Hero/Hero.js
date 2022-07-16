@@ -158,7 +158,8 @@ const Hero = () => {
                 {/* <h1 ref={el => title = el}
                 data-scroll data-scroll-speed="2" className="ini-letters">T</h1> */}
                 <h1 ref={el => title = el}
-                data-scroll data-scroll-speed="2" className="title">Twyla <br/>Tang</h1>
+                data-scroll data-scroll-speed="2" className="title">T<span>w</span>yla <br/>Ta<span>n</span>g</h1>
+
                 {/* <div className='text'>
                 <p
                 data-scroll data-scroll-speed="2" className='job-1'>UI/UX designer</p>
