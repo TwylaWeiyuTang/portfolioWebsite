@@ -50,24 +50,31 @@
       }
 
 
-      .title {
+      .title-container {
         position: absolute;
         top: 10%;
         right: 0;
         z-index: -1;
-        font-size: calc(5.375rem + 4.5vw);
-        line-height: calc(6.375rem + 4.5vw);
-        text-transform: uppercase;
-        text-align: right;
 
-        display: inline-block;
-
-        color: #eadede;
-
-        span {
+        h1 {
+          font-size: calc(5.375rem + 4.5vw);
+          text-transform: uppercase;
+          text-align: right;
           display: inline-block;
-          -webkit-text-stroke: 2px #eadede;
-          color: transparent;
+          color: #eadede;
+
+          .line-container {
+            margin: 0;
+            height: calc(5.375rem + 4.5vw);
+            overflow: hidden;
+            z-index: 10;
+
+            span {
+              display: inline-block;
+              -webkit-text-stroke: 2px #eadede;
+              color: transparent;
+            }
+          }
         }
       }
 

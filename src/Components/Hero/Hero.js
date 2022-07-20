@@ -8,24 +8,25 @@ const Hero = () => {
         let title = useRef(null)
 
         let tl = new gsap.timeline({delay: .8})
-        let tl1 = new gsap.timeline()
 
         useEffect(() => {
 
-                const headlineFirst = app.children[0]
-                const headlineSecond = app.children[2]
-                console.log(app.children[2])
-                const textP = app.children[1]
+                const headlineFirst = title.children[0].children[0]
+                const headlineSecond = title.children[0].children[1]
+
                 const texts = document.querySelectorAll(".strip-text")
 
 
                 gsap.to(app, {duration: 0, css: {visibility: 'visible'}})
 
-                tl.from(headlineFirst,
-                        {duration: 1, y: -100, ease: "power3.easeOut"}, 'start')
-                        .from(headlineSecond, {duration: 1, y: 100, ease: "power3.easeOut"}, 'start')
-                        .from(textP, {duration: 1, y: 20, opacity: 0, ease: "power3.easeOut", delay: .8})
-                    // start means the first timeline and this timeline will run together
+                tl.from([headlineFirst.children, headlineSecond.children], {
+                        duration: 1.5,
+                        y: "11rem",
+                        ease: "power3.easeOut",
+                        stagger: {
+                          each: .15
+                        }
+                      });
 
                       var boxWidth = 500
                   gsap.set(texts, {
@@ -51,7 +52,7 @@ const Hero = () => {
                 //         ease: "power4",
                 //   })
                 
-                }, [tl, tl1])
+                }, [tl])
 
   return (
         <div 
@@ -157,8 +158,17 @@ const Hero = () => {
 		</svg>
                 {/* <h1 ref={el => title = el}
                 data-scroll data-scroll-speed="2" className="ini-letters">T</h1> */}
-                <h1 ref={el => title = el}
-                data-scroll data-scroll-speed="2" className="title">T<span>w</span>yla <br/>Ta<span>n</span>g</h1>
+                <div className='title-container' ref={el => title= el}>
+                        <h1 data-scroll data-scroll-speed="2">
+                                <div className='line-container'>
+                                        <div className='line-container-inner'>T<span>w</span>yla</div>
+                                </div>
+
+                                <div className='line-container'>
+                                        <div className='line-container-inner'>Ta<span>n</span>g</div>
+                                </div>
+                        </h1>
+                </div>
 
                 {/* <div className='text'>
                 <p
