@@ -2,7 +2,6 @@ import React from 'react'
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
-import Logo from '../Logo';
 import { ReactComponent as TLogo } from '../../images/logoT.svg'
 import './headerStyle.scss'
 

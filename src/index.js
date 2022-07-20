@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'locomotive-scroll/dist/locomotive-scroll.css'
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
 import '../src/fonts/library-3-am-font/Library3am-5V3Z.otf'
 import { BrowserRouter } from "react-router-dom";
 
