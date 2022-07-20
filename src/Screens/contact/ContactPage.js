@@ -1,5 +1,6 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import emailjs from '@emailjs/browser';
+import gsap from 'gsap';
 
 import './contactPageStyle.scss'
 
@@ -15,7 +16,6 @@ const ContactPage = () => {
   const [status, setStatus] = useState("Send");
 
   let form = useRef();
-  console.log(form.current)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +32,24 @@ const ContactPage = () => {
     });
 };
 
+  let titleRef = useRef(null)
+  let headlineTL = new gsap.timeline()
+
+  useEffect(() => {
+
+    const headlineFirst = titleRef.children[0].children[0]
+    const headlineSecond = titleRef.children[0].children[1]
+
+    headlineTL.from([headlineFirst.children, headlineSecond.children], {
+      duration: 1.5,
+      y: "11rem",
+      ease: "power3.easeOut",
+      stagger: {
+        each: .15
+      }
+    });
+  }, [headlineTL])
+
   return (
     <div className='contact'>
       <div className='boxes-container'>
@@ -39,8 +57,16 @@ const ContactPage = () => {
         <div className='middle'></div>
         <div className='top-boxes'></div>
       </div>
-      <div className='text-container'>
-        <h1  data-scroll data-scroll-speed="4">GET IN TOUCH</h1>
+      <div className='text-container' ref={el => titleRef = el}>
+        <h1 data-scroll data-scroll-speed="2">
+          <div className='line-container'>
+            <div className='line-container-inner'>GET IN</div>
+          </div>
+
+          <div className='line-container'>
+            <div className='line-container-inner'>TOUCH</div>
+          </div>
+        </h1>
       </div>
       <div className='contact-form'>
         <form ref={form} onSubmit={handleSubmit} >

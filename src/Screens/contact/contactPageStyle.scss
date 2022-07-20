@@ -54,6 +54,13 @@
 
         h1 {
             font-size: 11rem;
+
+            .line-container {
+                margin: 0;
+                height: 11rem;
+                overflow: hidden;
+                z-index: 10;
+            }
         }
     }
 
@@ -102,8 +109,8 @@
         textarea {
             display: block;
             background: none;
-            border-bottom: 5px solid !important;
-            border-image: linear-gradient(to right, #ff6a42, #f58840, #ffe2e8) 1;
+            border-bottom: 3px solid #F58840!important;
+            // border-image: linear-gradient(to right, #ff6a42, #f58840, #ffe2e8) 1;
             border-width: 0;
             font-family: 'Urbanist';
             width: 30vw;
@@ -205,3 +212,11 @@
 
     }
 }
+
+.split-parent {
+    overflow: hidden;
+  }
+
+.split-child {
+    display: inline-block;
+  }
