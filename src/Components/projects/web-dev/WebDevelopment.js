@@ -142,7 +142,7 @@ const WebDevelopment = () => {
 
   return (
     <div className='web-dev'>
-        <Section ref={ref} id='shop'>
+        <Section ref={ref} id='work'>
         <HorizontalText text={"Website \u00a0  •"}/>
       <Right ref={horizontalRef}>
           <Product img={img1} title='Empire Clinic' href='/work-empire-clinic-website'/>

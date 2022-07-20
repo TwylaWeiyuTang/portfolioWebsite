@@ -13,6 +13,8 @@ import WorkEmpire from './Screens/website-empire-clinic/WorkEmpire';
 import ScrollTriggerProxy from './Components/ScrollTriggerProxy';
 import About from './Screens/about/About';
 import Footer from './Components/footer/Footer';
+import NotFound from './Screens/not-found/NotFound';
+import PageLayout from './Components/PageLayout';
 
 function App() {
   const containerRef = useRef(null)
@@ -80,18 +82,16 @@ cursorScale.forEach(link => {
         <AnimatePresence>
         <main className='App' data-scroll-container ref={containerRef}>
         {/* <div className="cursor"></div> */}
-        {location.pathname !== "/about-me" ? (
-          <Header className='cursor-scale' bgcolor='transparent' color='white' />
-        ) : <Header bgcolor='white' color='black' />}
+        
         <Routes>
+          <Route element={<PageLayout />}>
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/about-me' element={<About />} />
+          </Route>
+          <Route path='*' element={<NotFound />} />
         </Routes>
-        {location.pathname !== "/about-me" ? (
-          <Footer />
-        ) : null}
         </main>
         </AnimatePresence>
       </LocomotiveScrollProvider>
