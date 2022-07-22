@@ -3,8 +3,8 @@ import './footerStyle.scss'
 
 const Footer = () => {
   return (
-    <div className='text-sec'>
-                <h3 >You never know what is there waiting for you, until you take the initiative.</h3>
+    <div className='text-sec' data-scroll data-scroll-speed='4' >
+                <h3>You never know what is there waiting for you, until you take the initiative.</h3>
                 <div>
                     <a href='/contact'>Contact form
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 152.9 43.4" xmlSpace='preserve' xmlnsXlink='http://www.w3.org/1999/xlink' style={{enableBackground: "new 0 0 152.9 43.4"}}>

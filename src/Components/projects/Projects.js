@@ -43,7 +43,7 @@ const Projects = () => {
           scroller: '.App',
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#EADEDE', color: '#64537D', overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#EADEDE', color: '#4A407E', overwrite: "auto"})
           },
           
           onLeaveBack: () => {

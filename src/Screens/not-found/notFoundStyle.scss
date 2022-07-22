@@ -1,0 +1,111 @@
+.notfound-container {
+    position: relative;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #4A407E;
+
+    .logo-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-left: 12px;
+        margin-left: 60px;
+        padding-top: 13px;
+    }
+
+    .text-con{
+        margin-top: 4rem;
+    }
+
+    .line {
+        width: 100vw;
+      }
+      .left, .right {
+        width: 50vw;
+        overflow: hidden;
+        display: inline-block;
+      }
+      .left {
+        color: #F58840;
+        transform: skew(0deg, -15deg);
+
+        .content {
+            width: 100vw;
+            text-align: center;
+        }
+      }
+      .right {
+        color: #eadede;
+        transform: skew(0deg, 15deg);
+
+        .content {
+            width: 100vw;
+            text-align: center;
+            transform: translate(-50vw);
+        }
+      }
+    //   .left .content {
+    //     width: 100vw;
+    //     text-align: center;
+    //   }
+    //   .right .content {
+    //     width: 100vw;
+    //     text-align: center;
+    //     transform: translate(-50vw);
+    //   }
+
+      span {
+        display: inline-block;
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 900;
+        font-size: 10vw;
+        text-transform: uppercase;
+        line-height: .8;
+        transition: ease-out .6s;
+      }
+
+      .particletext {
+        text-align:center;
+        position: relative;
+
+        &.confetti {
+            >.particle {
+               opacity:0;
+               position: absolute;
+               animation: confetti 3s ease-in infinite;
+               &.c1 {
+                  background-color:rgba(76,175,80,0.8);
+               }
+               &.c2 {
+                  background-color:rgba(245,136,64,0.8);
+               }
+            }
+         }
+      }
+
+      @keyframes confetti {
+        0% {
+           opacity:0;
+           transform:translateY(0%) rotate(0deg);
+        }
+        10% {
+           opacity:1;
+        }
+        35% {
+           transform:translateY(-800%) rotate(270deg);
+        }
+        80% {
+           opacity:1;
+        }
+        100% {
+           opacity:0;
+           transform:translateY(2000%) rotate(1440deg);
+        }
+     }
+
+}

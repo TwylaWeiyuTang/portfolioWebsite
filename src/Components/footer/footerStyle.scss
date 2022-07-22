@@ -2,7 +2,7 @@
     position: relative;
    width: 100vw;
    height: 100vh;
-   background-color: #64537D;
+   background-color: #4A407E;
    color: #eadede;
    text-align: center;
    display: flex;
@@ -42,7 +42,7 @@
 
         svg {
             fill: none;
-            stroke: rgba($color: #000000, $alpha: 0.6);
+            stroke: rgba($color: #fff, $alpha: .6);
             stroke-width: 2;
             stroke-miterlimit: 10;
             stroke-dasharray: 338;
