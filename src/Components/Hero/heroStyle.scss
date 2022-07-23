@@ -21,11 +21,15 @@
     justify-content: center;
     align-items: center;
 
+
+    .text-path-container {
+      margin-top: 10rem;
     .text-strip-wrapper {
       position:relative;
       width:250%;
       height:50px;
       right:50%;
+
       .texts {
         position:relative;
         left:-450px;
@@ -38,6 +42,7 @@
           text-align:center;
         }
       }
+    }
     }
 
       .ini-letters {

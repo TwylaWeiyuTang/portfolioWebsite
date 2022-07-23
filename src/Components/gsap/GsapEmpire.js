@@ -46,7 +46,7 @@ const Item = styled(motion.div)`
     margin-right: 6rem;
 
     img {
-        width: 100%;
+        width: 70%;
         height: auto;
         cursor: pointer;
         position: relative;
@@ -66,8 +66,8 @@ const Item = styled(motion.div)`
 const Product = ({img, title=''}) => {
     return(
         <Item
-        initial={{filter: 'grayscale(100%)'}}
-        whileInView={{filter: 'grayscale(0%)'}}
+        initial={{transform: 'scale(100%)'}}
+        whileInView={{transform: 'scale(130%)'}}
         transition={{duration: 0.5}}
         viewport={{once: false, amount: 'all'}}
         >

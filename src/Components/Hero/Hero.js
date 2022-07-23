@@ -57,7 +57,7 @@ const Hero = () => {
   return (
         <div 
         className='top' ref={el => app = el}>
-                <svg width="5000" height="600" viewBox="0 0 1440 539" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-path-container">
+                <svg width="5000" height="600" viewBox="0 0 1440 539" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-path-container">
 			<path d="M-17.4829 15.9294C297.2 -24.1211 339.25 187.141 393.211 351.93C447.171 516.719 617.113 575.553 790.539 486.617C963.965 397.68 1095.42 189.366 1488.7 319.17" stroke="#F58840" stroke-width="50" id="path-1" pathLength={5000}></path>
 			<g className='text-strip-wrapper'>
                                 <g className='texts'>

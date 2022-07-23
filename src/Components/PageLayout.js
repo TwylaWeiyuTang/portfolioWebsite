@@ -11,9 +11,7 @@ const PageLayout = () => {
 
   return (
     <>
-        {location.pathname !== "/about-me" ? (
-          <Header className='cursor-scale' bgcolor='transparent' color='white' />
-        ) : <Header bgcolor='white' color='black' />}
+        <Header />
         <Outlet />
          {location.pathname !== "/about-me" ? (
           <Footer />

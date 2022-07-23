@@ -13,6 +13,7 @@ const Section = styled.section`
     width: 100vw;
     margin: 0 auto;
     overflow: hidden;
+    color: black;
 
     display: flex;
     justify-content: space-between;
@@ -35,8 +36,6 @@ const Left = styled(motion.div)`
 
     position: absolute;
     right: 0;
-    bottom: 0%;
-    min-height: 100vh;
 
     p {
         font-size: ${props => props.theme.fontlg};
@@ -69,84 +68,10 @@ const WorkEmpire = () => {
   let ref = useRef(null)
   let bottomRef = useRef(null)
   let horizontalScrollRef = useRef(null)
-  
-
-  let tl = new gsap.timeline()
-
-  useEffect(() => {
-    // const scroller = new locomotiveScroll({
-    //   el: ref,
-    //   smooth: true,
-    //   getDirection: true
-    // });
-  
-    // scroller.on("scroll", ScrollTrigger.update);
-  
-    // ScrollTrigger.scrollerProxy(ref, {
-    //   scrollTop(value) {
-    //     return arguments.length
-    //       ? scroller.scrollTo(value, 0, 0)
-    //       : scroller.scroll.instance.scroll.y;
-    //   },
-    //   getBoundingClientRect() {
-    //     return {
-    //       left: 0,
-    //       top: 0,
-    //       width: window.innerWidth,
-    //       height: window.innerHeight
-    //     };
-    //   },
-    //   pinType: ref.style.transform ? "transform" : "fixed"
-    // });
-
-    setTimeout(() => {
-      tl.to(ref, {
-        scrollTrigger: {
-          trigger: horizontalScrollRef,
-          start:"top 100%",
-          end: "bottom",
-          scroller: '.App',
-          markers: true,
-          scrub: true,
-          onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
-          },
-          
-          onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#B85252', color: "#EADEDE", overwrite: "auto"})
-          },
-      }
-      })
-
-      tl.to(ref, {
-        scrollTrigger: {
-          trigger: bottomRef,
-          start:"top 100%",
-          end: "bottom",
-          scroller: '.App',
-          markers: true,
-          scrub: true,
-          onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#EADEDE', color: '#B85252', overwrite: "auto"})
-          },
-          
-          onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', overwrite: "auto"})
-          },
-      }
-      })
-    }, 1000)
-      ScrollTrigger.refresh()
-return () => {
-  // Let's clear instances
-  tl.kill()
-  ScrollTrigger.kill()
-}
-  }, [tl])
 
   return (
     <div className='workEmpire' ref={el => ref = el}>
-    <Section>
+    <Section style={{backgroundColor: "#eadede"}}>
       <Title
       initial={{opacity: 0}} 
       animate={{opacity: 1}} 
