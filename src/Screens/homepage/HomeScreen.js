@@ -29,11 +29,11 @@ const HomeScreen = () => {
           scroller: '.App',
           scrub: true,
           onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#EADEDE", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: '#F58840', color: "#eadede", overwrite: "auto"})
           },
           
           onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: 'black', color: "#EADEDE", overwrite: "auto"})
+            gsap.to('.App', { duration: 1.0, backgroundColor: 'black', color: "#eadede", overwrite: "auto"})
           },
       }
       })

@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Library 3 am";
-  src: url(../../fonts/library-3-am-font/Library3am-5V3Z.otf),
-   local("Library 3 am") format("truetype");
-  }
 
 .top {
     visibility: hidden;
@@ -23,7 +18,7 @@
 
 
     .text-path-container {
-      margin-top: 10rem;
+      margin-top: 11rem;
     .text-strip-wrapper {
       position:relative;
       width:250%;
@@ -45,19 +40,9 @@
     }
     }
 
-      .ini-letters {
-        font-size: calc(10rem + 15vw);
-        font-family: 'Library 3 am';
-        position: absolute;
-        top: 9%;
-        right: 25%;
-        z-index: -1;
-      }
-
-
       .title-container {
         position: absolute;
-        top: 10%;
+        top: 25%;
         right: 0;
         z-index: -1;
 

@@ -9,7 +9,13 @@ body {
 a {
   text-decoration: none !important;
   color: inherit !important;
+  
 }
+
+/* .navbar-light .navbar-nav .nav-link {
+  color: #eadede !important;
+} */
+
 
 .cursor{
   position: fixed;

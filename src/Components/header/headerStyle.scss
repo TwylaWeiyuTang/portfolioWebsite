@@ -1,8 +1,9 @@
 .header {
   position: absolute;
   top: 0px;
-  z-index: 10;
+  z-index: 50;
   width: 100vw;
+  color: inherit;
 
   .header-items {
     background-color: transparent;
@@ -10,10 +11,14 @@
     margin-inline-start: 4vw;
     font-weight: 300;
     transition: all 0.5s ease;
-    color: inherit;
+    color:inherit !important;
   
           &:hover {
               transform: translateY(-5px);
           }
   }
+
+  navbar-light .navbar-nav .nav-link {
+    color: inherit !important;
+}
 }
