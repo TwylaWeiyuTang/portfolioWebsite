@@ -3,7 +3,7 @@ import './footerStyle.scss'
 
 const Footer = () => {
   return (
-    <div className='text-sec' data-scroll data-scroll-speed='4' >
+    <div className='text-sec' >
                 <h3>You never know what is there waiting for you, until you take the initiative.</h3>
                 <div>
                     <a href='/contact'>Contact form
