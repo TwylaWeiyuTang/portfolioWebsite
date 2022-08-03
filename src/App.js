@@ -15,6 +15,7 @@ import About from './Screens/about/About';
 import Footer from './Components/footer/Footer';
 import NotFound from './Screens/not-found/NotFound';
 import PageLayout from './Components/PageLayout';
+import WorkDisplore from './Screens/website-displore/WorkDisplore';
 
 function App() {
   const containerRef = useRef(null)
@@ -87,6 +88,7 @@ cursorScale.forEach(link => {
           <Route element={<PageLayout />}>
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />
+          <Route path='/work-displore-website' element={<WorkDisplore />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/about-me' element={<About />} />
           </Route>
