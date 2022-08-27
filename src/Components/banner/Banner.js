@@ -57,6 +57,7 @@ const Banner = () => {
     })
 
   return (
+    <div>
     <Section>
         <Container id='up'>
             <BannerComponent>
@@ -120,6 +121,7 @@ const Banner = () => {
 
         </Container>
     </Section>
+    </div>
   )
 }
 

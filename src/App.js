@@ -87,10 +87,10 @@ cursorScale.forEach(link => {
         <Routes>
           <Route element={<PageLayout />}>
           <Route exact path='/' element={<HomeScreen />} />
-          <Route path='/work-empire-clinic-website' element={<WorkEmpire />} />
-          <Route path='/work-displore-website' element={<WorkDisplore />} />
-          <Route path='/contact' element={<ContactPage />} />
-          <Route path='/about-me' element={<About />} />
+          <Route path='work-empire-clinic-website' element={<WorkEmpire />} />
+          <Route path='work-displore-website' element={<WorkDisplore />} />
+          <Route path='contact' element={<ContactPage />} />
+          <Route path='about-me' element={<About />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

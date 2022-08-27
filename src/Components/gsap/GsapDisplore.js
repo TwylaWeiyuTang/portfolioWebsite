@@ -5,12 +5,11 @@ import styled from "styled-components";
 
 import './gsapEmpireStyle.scss'
 
-import img1 from '../../images/empireThumbnail.png'
-import img3 from '../../images/empire_hero_2.png'
-import img2 from '../../images/empire_who.png'
-import video1 from '../../video/empire_aesthetic.mov'
-import video2 from '../../video/empire_6_video.mov'
-import video3 from '../../video/empire_ozone.mov'
+import img1 from '../../images/displore_wallet.png'
+import video1 from '../../video/displore_hero.mov'
+import video2 from '../../video/displore_middle.mov'
+import video3 from '../../video/displore_nfts.mov'
+import video4 from '../../video/displore_footer.mov'
 
 import { motion } from 'framer-motion'
 
@@ -184,15 +183,16 @@ const GsapDisplore = () => {
       }
   })
 return (
+    <div>
   <Section ref={ref} id='shop'>
 
       <Right ref={horizontalRef}>
         <h2>Some Highlights</h2>
-          <Product img={img3} title='Hero Section' detail="I used black, white and grey as primary color to convey the meaning of the brand. More than beauty, power, elegance, bright, and balance are also wished to be brought to their clients. I implemented language selection function to enhance the user experience for non-italian speakers."/>
-          <Product video={video2} title='Services' detail="I used this 'jigsaw block' style to increase the visual impact for this section and to create a modern brand image. The hover effect brings extra vibrancy for the section. "/>
-          <Product video={video1} title='Aesthetic Medicine' detail="With this simple but clean design, a soothing and nourishing vibe is created. The design is just as the aesthetic medicine experience itself. The in-page contact form helps clients to reach out to the clinic without navigating to other page, thus increasing the user experience and the customer conversion rate.  " />
-          <Product video={video3} title='Ozonetherapy' detail="Ozonetherapy is one of the Empire Clinic's main services. I used a motion background with water bubbles floating around to create a rich in oxygen and refreshing feeling. By choosing less bright color and transparent text section background,  the design for the entire page is lightweight, which is in a balance with the moving background.  "/>
-          <Product img={img2} title='Introduction Video' detail="I used empire clinic's photo as the background for their introduction video section, which created a unique segmentation."/>
+          <Product video={video1} title='Hero Section' detail="I used black, white and grey as primary color to convey the meaning of the brand. More than beauty, power, elegance, bright, and balance are also wished to be brought to their clients. I implemented language selection function to enhance the user experience for non-italian speakers."/>
+          <Product img={img1} title='Wallet Connection' detail="I used this 'jigsaw block' style to increase the visual impact for this section and to create a modern brand image. The hover effect brings extra vibrancy for the section. "/>
+          <Product video={video2} title='Function Introduction' detail="With this simple but clean design, a soothing and nourishing vibe is created. The design is just as the aesthetic medicine experience itself. The in-page contact form helps clients to reach out to the clinic without navigating to other page, thus increasing the user experience and the customer conversion rate.  " />
+          <Product video={video3} title='Search & Display' detail="Ozonetherapy is one of the Empire Clinic's main services. I used a motion background with water bubbles floating around to create a rich in oxygen and refreshing feeling. By choosing less bright color and transparent text section background,  the design for the entire page is lightweight, which is in a balance with the moving background.  "/>
+          <Product video={video4} title='Footer' detail="I used empire clinic's photo as the background for their introduction video section, which created a unique segmentation."/>
           {/* <Product img={img1} title='Dermatology' />
           <Product img={img1} title='Nutrition' />
           <Product img={img1} title='Cosmetics' />
@@ -200,6 +200,7 @@ return (
           
       </Right>
   </Section>
+  </div>
 )
 }
 

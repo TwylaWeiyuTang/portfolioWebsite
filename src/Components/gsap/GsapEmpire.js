@@ -184,6 +184,7 @@ const GsapEmpire = () => {
       }
   })
 return (
+    <div>
   <Section ref={ref} id='shop'>
 
       <Right ref={horizontalRef}>
@@ -200,6 +201,7 @@ return (
           
       </Right>
   </Section>
+  </div>
 )
 }
 

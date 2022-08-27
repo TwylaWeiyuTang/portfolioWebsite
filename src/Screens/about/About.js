@@ -7,49 +7,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import portrait from '../../images/portrait.jpg'
 
 const About = () => {
-    let ref = useRef(null)
-    let topRef = useRef(null)
-    let bottomRef = useRef(null)
-
-    gsap.registerPlugin(ScrollTrigger)
   
-
-  let tl = new gsap.timeline()
-
-  useEffect(() => {
-
-    setTimeout(() => {
-
-      tl.to(ref, {
-        scrollTrigger: {
-          trigger: topRef,
-          start:"top 100%",
-          end: "bottom",
-          scroller: '.App',
-          markers: true,
-          scrub: true,
-          onEnter: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: 'white', overwrite: "auto"})
-          },
-          
-          onLeaveBack: () => {
-            gsap.to('.App', { duration: 1.0, backgroundColor: 'white', color: "#EADEDE", overwrite: "auto"})
-          },
-      }
-      })
-    }, 1000)
-      ScrollTrigger.refresh()
-return () => {
-  // Let's clear instances
-  tl.kill()
-  ScrollTrigger.kill()
-}
-  }, [tl])
-
   return (
-    <div className='about' ref={ref}>
+    <div className='about' >
         <div className="c-section" data-scroll-section data-persistent>
-                <div className="o-container" id="fixed-elements" data-textcolor="#032f35" data-bgcolor="#bcb8ad" ref={topRef}>
+                <div className="o-container" id="fixed-elements" data-textcolor="#032f35" data-bgcolor="#bcb8ad">
                     <div className="o-layout">
                         <div className="o-layout_item u-2/5@from-medium">
                             <div className="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#fixed-elements">
@@ -88,7 +50,7 @@ return () => {
                         </div>
                     </div>
                 </div>
-                <div className='text-sec' data-bgcolor="#e3857a" data-textcolor="#f1dba7" ref={bottomRef}>
+                <div className='text-sec' data-bgcolor="#e3857a" data-textcolor="#f1dba7">
                     <h3 >You never know what is there waiting for you, until you take the initiative.</h3>
                 <div>
                 <a href='/contact'>Contact form

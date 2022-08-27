@@ -76,7 +76,7 @@ const Title = styled.h1`
     margin-bottom: 1rem;
 
     /* -webkit-text-stroke: 2px black; */
-    color: #eadede;
+    color: white;
     position: fixed;
     margin-top: 48vh;
 
@@ -88,7 +88,7 @@ const Title = styled.h1`
 const Left = styled.div`
     width: 70%;
     position: absolute;
-    bottom: 15vh;
+    bottom: 18vh;
 
     p {
         font-size: 1.3rem;
@@ -104,8 +104,8 @@ const WorkDisplore = () => {
   
 
   return (
-    <div className='workEmpire'>
-    <Section style={{backgroundColor: "#eadede"}}>
+    <>
+    <Section style={{backgroundColor: "#D5E7E4"}}>
       <Button data-scroll data-scroll-speed='-6'>
         <button><a href='https://www.empireclinic.it/' target='_blank' rel='noreferrer'><svg className="text" width="100%" height="80px" aria-hidden="true">
           <text className="text" x="0" y="0" dy="1em" fill="currentColor">View the live site</text>
@@ -117,17 +117,17 @@ const WorkDisplore = () => {
         <button>Development</button>
       </Button>
 
-      <Title data-scroll data-scroll-speed="-6">Empire Clinic</Title>
+      <Title data-scroll data-scroll-speed="-6">Displore</Title>
 
       <Left data-scroll data-scroll-speed="2">
             <p>
-            Empire Clinic is a medical spa located in Rome, Italy. The main style of Empire Clinic is the comibination of classic and modern.
+            Displore is a web3 recommendation system project. It provides users with recommended NFTs using AI.
             </p>
       </Left>
     </Section>
 
     <GsapDisplore />
-    </div>
+    </>
   )
 }
 

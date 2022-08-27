@@ -3,22 +3,16 @@
   top: 0px;
   z-index: 50;
   width: 100vw;
-  color: inherit;
 
   .header-items {
-    background-color: transparent;
+    // background-color: transparent;
     font-family: "Urbanist", sans-serif;
     margin-inline-start: 4vw;
     font-weight: 300;
     transition: all 0.5s ease;
-    color:inherit !important;
   
           &:hover {
               transform: translateY(-5px);
           }
   }
-
-  navbar-light .navbar-nav .nav-link {
-    color: inherit !important;
-}
 }

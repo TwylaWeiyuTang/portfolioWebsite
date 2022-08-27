@@ -176,6 +176,8 @@ $to-colossal:   $from-colossal - 1 !default;
 
 .c-section_infos {
     position: absolute;
+    top: 10vh;
+    margin-left: 3rem;
     z-index: 0;
     text-align: left;
 
@@ -360,7 +362,7 @@ $to-colossal:   $from-colossal - 1 !default;
     }
 
     img {
-        width: 50vw;
+        width: 45vw;
         float: right;
         padding-right: 2rem;
         height: 100vh;
