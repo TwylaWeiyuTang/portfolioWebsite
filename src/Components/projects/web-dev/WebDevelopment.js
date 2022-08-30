@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/all";
 import img1 from '../../../images/empireThumbnail.png'
 import img2 from '../../../images/sushibathumbnail.png'
+import img3 from '../../../images/vibethumbnail.png'
 
 import { motion } from 'framer-motion'
 import HorizontalLeft from '../../horizontal-moving-text/HorizontalLeft'
@@ -148,7 +149,7 @@ const WebDevelopment = () => {
       <Right ref={horizontalRef}>
           <Product img={img1} title='Empire Clinic' href='/work-empire-clinic-website'/>
           <Product img={img2} title='Displore Recommendation System' href='/work-displore-website' />
-          <Product img={img1} title='Contact' />
+          <Product img={img3} title='Vibe Ecommerce' href='/work-vibe-ecommerce' />
           <Product img={img1} title='Aesthetic Medicine' />
           <Product img={img1} title='Dentistry' />
           <Product img={img1} title='Dermatology' />

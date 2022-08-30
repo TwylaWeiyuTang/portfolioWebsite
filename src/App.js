@@ -16,6 +16,7 @@ import Footer from './Components/footer/Footer';
 import NotFound from './Screens/not-found/NotFound';
 import PageLayout from './Components/PageLayout';
 import WorkDisplore from './Screens/website-displore/WorkDisplore';
+import WorkVibe from './Screens/website-vibe/WorkVibe';
 
 function App() {
   const containerRef = useRef(null)
@@ -89,6 +90,7 @@ cursorScale.forEach(link => {
           <Route exact path='/' element={<HomeScreen />} />
           <Route path='work-empire-clinic-website' element={<WorkEmpire />} />
           <Route path='work-displore-website' element={<WorkDisplore />} />
+          <Route path='work-vibe-ecommerce' element={<WorkVibe />} />
           <Route path='contact' element={<ContactPage />} />
           <Route path='about-me' element={<About />} />
           </Route>
