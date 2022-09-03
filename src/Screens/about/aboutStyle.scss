@@ -370,3 +370,33 @@ $to-colossal:   $from-colossal - 1 !default;
 }
 
 
+@media screen and (max-width: 600px) {
+    .c-fixed_wrapper {
+        height: 100vh;
+    }
+
+    .c-fixed {
+        top: -90vh;
+
+        img {
+            height: 50vh;
+            width: unset;
+        }
+    }
+
+    .c-section_infos_inner > * {
+        padding-left: 0 !important;
+    }
+
+    .c-section_infos {
+        top: 30vh;
+
+        h3 {
+            width: 80vw;
+        }
+
+        p {
+            width: 80vw;
+        }
+    }
+}

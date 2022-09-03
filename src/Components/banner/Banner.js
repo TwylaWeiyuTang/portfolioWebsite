@@ -38,6 +38,10 @@ const BannerComponent = styled.h1`
     span{
         line-height: 200%;
     }
+
+    @media screen and (max-width: 600px) {
+    font-size: 1rem;
+}
 `
 
 const Arrow = styled.div`

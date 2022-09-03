@@ -1,8 +1,5 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import './aboutStyle.scss'
-import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 
 import portrait from '../../images/portrait.jpg'
 
@@ -50,7 +47,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className='text-sec' data-bgcolor="#e3857a" data-textcolor="#f1dba7">
+                <div className='text-sec'>
                     <h3 >You never know what is there waiting for you, until you take the initiative.</h3>
                 <div>
                 <a href='/contact'>Contact form

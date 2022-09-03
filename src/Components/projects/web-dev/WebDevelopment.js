@@ -56,7 +56,7 @@ const Item = styled(motion.div)`
     }
 
     h4 {
-      display: inline-block;
+        display: inline-block;
         width: fit-content;
         font-weight: 500;
         text-align: justify;
@@ -76,6 +76,15 @@ const Item = styled(motion.div)`
             visibility: visible;
         }
     }
+
+    @media screen and (max-width: 600px) {
+    width: 100vw;
+    margin-right: 3rem;
+
+    h4 {
+        font-size: 1.2rem;
+    }
+}
 `
 
 const Product = ({img, title='', href}) => {
@@ -158,7 +167,7 @@ const WebDevelopment = () => {
           <Product img={img1} title='Ozone therapy' />
           
       </Right>
-      <HorizontalLeft text={"Development \u00a0  •"} boxWid={610} numOfBoxes={6} />
+      <HorizontalLeft text={"Development \u00a0  •"}  />
   </Section>
     </div>
   )

@@ -221,3 +221,37 @@
 .split-child {
     display: inline-block;
   }
+
+@media screen and (max-width: 600px) {
+    .text-container {
+      width: 100% !important;
+      left: unset !important;
+      bottom: 6vh !important;
+      margin-left: 1rem;
+      h1 {
+        font-size: 6rem !important;
+      }
+
+      .line-container {
+        height: 6rem !important;
+    }
+    }
+
+    .contact-form {
+      input {
+        width: 80% !important;
+        margin: 2vh !important;
+      }
+
+      textarea {
+        width: 80% !important;
+        margin: 3vh auto !important;
+      }
+
+      button {
+        margin-top: 7vh !important;
+        margin-left: auto !important;
+        margin-right: auto;
+      }
+    }
+}

@@ -70,6 +70,24 @@ const Button = styled.div`
         }
       }
 
+      @media screen and (max-width: 600px) {
+        top: -10vh;
+        width: 100vw !important; 
+        display: block !important;
+
+        svg {
+          transform: scale(0.75);
+        }
+
+        button {
+          font-size: 1.3rem;
+          :nth-child(1) {
+            border: none;
+            margin-right: unset;
+            margin-bottom: 1rem;
+        }
+      }
+    }
 
 `
 
@@ -87,6 +105,13 @@ const Title = styled.h1`
 
     mix-blend-mode: difference;
     /* text-transform: uppercase; */
+
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+      font-size: 6rem;
+      margin-top: 45vh !important;
+      line-height: 7rem;
+    }
 `
 
 const Left = styled.div`
@@ -101,6 +126,15 @@ const Left = styled.div`
         margin: 0 auto;
         font-family: 'Urbanist', sans-serif;
         text-align: left;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 85% !important;
+
+      p {
+        font-size: 1.1rem !important;
+        text-align: unset !important;
+      }
     }
 `
 

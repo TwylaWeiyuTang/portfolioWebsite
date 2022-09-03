@@ -132,3 +132,16 @@
     background-image: url(../../images/background_50.PNG);
   }
 }
+
+@media screen and (max-width: 600px) {
+    .text-path-container {
+      margin-top: 30vh !important;
+      width: 100vw;
+
+      transform: scale(2.2) translateX(15vw) translateY(-3vh);
+    }
+
+    .title-container {
+      top: 30% !important;
+    }
+}

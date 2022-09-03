@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import './heroStyle.scss'
-import { motion } from 'framer-motion'
+import styled from 'styled-components'
 import gsap from 'gsap'
 
 const Hero = () => {

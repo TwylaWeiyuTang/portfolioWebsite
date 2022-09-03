@@ -47,6 +47,13 @@ const Right = styled.div`
         color: transparent;
         -webkit-text-stroke: 1px #eadede;
     }
+
+
+    @media screen and (max-width: 600px) {
+        h2 {
+            font-size: 3rem !important;
+        }
+    }
 `
 
 const Item = styled(motion.div)`
@@ -92,12 +99,49 @@ const Item = styled(motion.div)`
         mix-blend-mode: difference;
         z-index: 10;
     }
+
+    @media screen and (max-width: 600px) {
+
+        h4 {
+            font-size: 2rem !important;
+            width: 90% !important;
+            left: 10% !important;
+        }
+
+        video {
+            width: 85% !important;
+            transform: translateY(-10vh) !important;
+        }
+
+        span {
+            font-size: 1rem !important;
+            width: 85% !important;
+            left: 10% !important;
+        }
+    }
+`
+
+const Image = styled(motion.img)`
+    z-index: 4;
+    width: 58.5%;
+    position: absolute;
+    transform: translateY(9vh) translateX(5vw);
+
+    @media screen and (max-width: 600px) {
+        width: 85% !important;
+        transform: translateY(-10vh) !important;
+    }
 `
 
 const Wrapper = styled(motion.img)`
     position: absolute;
     transform: translateY(9vh) translateX(5vw);
     width: 60%;
+
+    @media screen and (max-width: 600px) {
+        width: 87.5% !important;
+        transform: translateY(-10vh) !important;
+    }
 `
 
 const Product = ({img, title='', detail='', video}) => {
@@ -108,9 +152,8 @@ const Product = ({img, title='', detail='', video}) => {
             transition={{duration: 1}}
             viewport={{once: false, amount: 'all'}}
         >   
-            {img ? <img
+            {img ? <Image
             src={img} alt={title}
-            style={{zIndex: 4, width: "58.5%", position: "absolute", transform: "translateY(9vh) translateX(5vw)"}}
             /> : null }
             
             {video ? <video src={video} loop muted playsInline autoPlay

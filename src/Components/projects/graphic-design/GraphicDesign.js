@@ -73,6 +73,11 @@ const Item = styled(motion.div)`
             color: white;
         }
     }
+
+    @media screen and (max-width: 600px) {
+    width: 100vw;
+    margin-right: 3rem;
+}
 `
 
 const Product = ({img, title='', href}) => {

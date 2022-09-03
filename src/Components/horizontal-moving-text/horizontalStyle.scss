@@ -20,3 +20,9 @@
     position:relative;
     left:-250px;
 }
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    transform: translate(-50%, -120%) !important;
+  }
+}
