@@ -84,6 +84,21 @@ const Button = styled.div`
         }
       }
     }
+
+    @media screen and (min-width: 601px) and (max-width: 1330px) {
+      width: 90%;
+      svg {
+        transform: scale(0.9);
+      }
+
+      button {
+        :nth-child(1) {
+          padding: unset !important;
+          margin-right: unset !important;
+        }
+      }
+
+    }
 `
 
 const Title = styled.h1`
@@ -105,8 +120,12 @@ const Title = styled.h1`
       width: 100vw;
       font-size: 5rem;
       margin-top: 43vh !important;
-      line-height: 7rem;
       line-height: 1;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1330px) {
+      margin-top: 42vh !important;
+      font-size: 8rem;
     }
 `
 

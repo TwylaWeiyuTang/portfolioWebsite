@@ -81,7 +81,7 @@ const Item = styled(motion.div)`
         text-align: justify;
         justify-content: center;
         position: absolute;
-        left: 60%;
+        right: 0%;
         top: -35vh;
         color: #eadede;
 }
@@ -120,6 +120,39 @@ const Item = styled(motion.div)`
         left: 10% !important;
       }
     }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+      video{
+        width: 73% !important;
+        transform: translateY(-5vh) !important;
+      }
+      
+      span {
+        width: 50%;
+        top: 15vh;
+      }
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+
+      h4 {
+        width: 100% !important;
+        top: unset !important;
+        bottom: 30vh !important;
+      }
+
+      video {
+        width: 60% !important;
+        transform: translateY(-2vh) !important;
+      }
+
+      span {
+        font-size: 1rem;
+        width: 40%;
+        top: 15vh;
+      }
+
+    }
 `
 
 const Image = styled(motion.img)`
@@ -132,6 +165,17 @@ const Image = styled(motion.img)`
         width: 85% !important;
         transform: translateY(-10vh) !important;
     }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+        width: 73% !important;
+        transform: translateY(-5vh) !important;
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+      width: 60% !important;
+      transform: translateY(-2vh) !important;
+
+    }
 `
 
 const Wrapper = styled(motion.img)`
@@ -142,6 +186,17 @@ const Wrapper = styled(motion.img)`
     @media screen and (max-width: 600px) {
         width: 87.5% !important;
         transform: translateY(-10vh) !important;
+    }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+        width: 75.5% !important;
+        transform: translateY(-5vh) !important;
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+      width: 62.5% !important;
+      transform: translateY(-2vh) !important;
+
     }
 `
 
@@ -235,7 +290,7 @@ return (
           <Product img={img3} title='Hero Section' detail="I used black, white and grey as primary color to convey the meaning of the brand. More than beauty, power, elegance, bright, and balance are also wished to be brought to their clients. I implemented language selection function to enhance the user experience for non-italian speakers."/>
           <Product video={video2} title='Services' detail="I used this 'jigsaw block' style to increase the visual impact for this section and to create a modern brand image. The hover effect brings extra vibrancy for the section. "/>
           <Product video={video1} title='Aesthetic Medicine' detail="With this simple but clean design, a soothing and nourishing vibe is created. The design is just as the aesthetic medicine experience itself. The in-page contact form helps clients to reach out to the clinic without navigating to other page, thus increasing the user experience and the customer conversion rate.  " />
-          <Product video={video3} title='Ozonetherapy' detail="Ozonetherapy is one of the Empire Clinic's main services. I used a motion background with water bubbles floating around to create a rich in oxygen and refreshing feeling. By choosing less bright color and transparent text section background,  the design for the entire page is lightweight, which is in a balance with the moving background.  "/>
+          <Product video={video3} title='Ozone Therapy' detail="Ozonetherapy is one of the Empire Clinic's main services. I used a motion background with water bubbles floating around to create a rich in oxygen and refreshing feeling. By choosing less bright color and transparent text section background,  the design for the entire page is lightweight, which is in a balance with the moving background.  "/>
           <Product img={img2} title='Introduction Video' detail="I used empire clinic's photo as the background for their introduction video section, which created a unique segmentation."/>
           {/* <Product img={img1} title='Dermatology' />
           <Product img={img1} title='Nutrition' />

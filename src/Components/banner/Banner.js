@@ -42,12 +42,16 @@ const BannerComponent = styled.h1`
     @media screen and (max-width: 600px) {
     font-size: 1rem;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1330px) {
+    font-size: 1.8rem !important;
+}
 `
 
 const Arrow = styled.div`
     position: absolute;
     right: 15%;
-    bottom: -5%;
+    bottom: -5vh;
 `
 
 

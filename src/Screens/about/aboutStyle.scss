@@ -241,10 +241,7 @@ $to-colossal:   $from-colossal - 1 !default;
 }
 
 .o-container {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: rem($container-width + (40px*2));
-    margin-bottom: 3rem;
+    height: 100vh;
 }
 
 .o-layout {
@@ -397,6 +394,33 @@ $to-colossal:   $from-colossal - 1 !default;
 
         p {
             width: 80vw;
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1330px) {
+    .c-fixed_wrapper {
+        height: 90vh;
+    }
+
+    .c-fixed {
+        top: -80vh;
+
+        img {
+            height: 60vh;
+            width: unset;
+        }
+    }
+
+    .c-section_infos {
+        top: 30vh;
+
+        h3 {
+            width: 50vw;
+        }
+
+        p {
+            width: 50vw;
         }
     }
 }

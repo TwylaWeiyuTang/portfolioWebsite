@@ -50,7 +50,7 @@
         position: absolute;
         width: 50%;
         bottom: 5vh;
-        left: 55%;
+        right: 0;
         text-align: left;
 
         h1 {
@@ -254,4 +254,22 @@
         margin-right: auto;
       }
     }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1330px) {
+  .text-container {
+    width: fit-content !important;
+    bottom: 6vh !important;
+    margin-right: 1rem;
+    
+    h1 {
+      font-size: 8rem !important;
+
+      .line-container {
+          height: 8rem !important;
+      }
+  }
+  }
+
+
 }

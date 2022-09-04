@@ -80,7 +80,7 @@ const Item = styled(motion.div)`
         text-align: justify;
         justify-content: center;
         position: absolute;
-        left: 60%;
+        right: 0%;
         top: -35vh;
         color: #eadede;
 }
@@ -119,6 +119,39 @@ const Item = styled(motion.div)`
             left: 10% !important;
         }
     }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+      video{
+        width: 73% !important;
+        transform: translateY(-5vh) !important;
+      }
+      
+      span {
+        width: 50%;
+        top: 15vh;
+      }
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+
+      h4 {
+        width: 100% !important;
+        top: unset !important;
+        bottom: 30vh !important;
+      }
+
+      video {
+        width: 60% !important;
+        transform: translateY(-2vh) !important;
+      }
+
+      span {
+        font-size: 1rem;
+        width: 40%;
+        top: 15vh;
+      }
+
+    }
 `
 
 const Image = styled(motion.img)`
@@ -131,6 +164,17 @@ const Image = styled(motion.img)`
         width: 85% !important;
         transform: translateY(-10vh) !important;
     }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+        width: 73% !important;
+        transform: translateY(-5vh) !important;
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+      width: 60% !important;
+      transform: translateY(-2vh) !important;
+
+    }
 `
 
 const Wrapper = styled(motion.img)`
@@ -141,6 +185,17 @@ const Wrapper = styled(motion.img)`
     @media screen and (max-width: 600px) {
         width: 87.5% !important;
         transform: translateY(-10vh) !important;
+    }
+
+    @media screen and (min-width:601px) and (max-width: 1000px) {
+        width: 75.5% !important;
+        transform: translateY(-5vh) !important;
+    }
+
+    @media screen and (min-width: 1001px) and (max-width: 1330px) {
+      width: 62.5% !important;
+      transform: translateY(-2vh) !important;
+
     }
 `
 

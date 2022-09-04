@@ -89,6 +89,21 @@ const Button = styled.div`
       }
     }
 
+    @media screen and (min-width: 601px) and (max-width: 1330px) {
+      width: 90%;
+      svg {
+        transform: scale(0.9);
+      }
+
+      button {
+        :nth-child(1) {
+          padding: unset !important;
+          margin-right: unset !important;
+        }
+      }
+
+    }
+
 `
 
 const Title = styled.h1`
