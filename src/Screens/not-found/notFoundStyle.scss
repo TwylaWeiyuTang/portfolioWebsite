@@ -14,7 +14,7 @@
         top: 0px;
         left: 0px;
         padding-left: 12px;
-        margin-left: 60px;
+        margin-left: 34.148px;
         padding-top: 13px;
     }
 
@@ -108,4 +108,16 @@
         }
      }
 
+}
+
+@media screen and (max-width: 600px) {
+   .logo-container {
+      margin-left: unset !important;
+   }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+   .logo-container {
+      margin-left: 10px !important;
+   }
 }
