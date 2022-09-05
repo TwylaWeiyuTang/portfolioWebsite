@@ -43,15 +43,45 @@ const BannerComponent = styled.h1`
     font-size: 1rem;
 }
 
-@media screen and (min-width: 601px) and (max-width: 1330px) {
-    font-size: 1.8rem !important;
-}
+    @media screen and (min-width: 601px) and (max-width: 1330px) {
+        font-size: 1.8rem !important;
+    }
+
+    @media screen and (min-width: 1800px) {
+        font-size: 2.5rem !important;
+
+        span {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    @media screen and (min-width: 2200px) {
+        :nth-child(1) {
+            /* margin-bottom: unset !important; */
+            margin-top: 20vh;
+        }
+
+        span {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
 `
 
 const Arrow = styled.div`
     position: absolute;
     right: 15%;
-    bottom: -5vh;
+    bottom: -10vh;
+
+    @media screen and (min-width: 1800px) {
+        bottom: 0vh;
+    }
+
+    @media screen and (min-width: 2200px) {
+        bottom: 10vh;
+    }
 `
 
 

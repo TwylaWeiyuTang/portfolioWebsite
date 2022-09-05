@@ -145,3 +145,21 @@
       top: 30% !important;
     }
 }
+
+@media screen and (min-width: 1500px) {
+
+  .top {
+    svg {
+      height: 800px !important;
+    }
+  }
+}
+
+@media screen and (min-width: 2000px) {
+
+  .top {
+    svg {
+      height: 1100px !important;
+    }
+  }
+}

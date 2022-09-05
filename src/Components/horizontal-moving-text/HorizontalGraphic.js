@@ -10,7 +10,7 @@ const HorizontalGraphic = ({text}) => {
         // gsap.set('#no03',{y:120})
 
         var boxWidth = 370,
-            totalWidth = boxWidth * 6,  //  * n of boxes
+            totalWidth = boxWidth * 9,  //  * n of boxes
             no02 = document.querySelectorAll("#no02 .box-graphic"),
             // no02 = document.querySelectorAll("#no02 .box"),
             // no03 = document.querySelectorAll("#no03 .box"),
@@ -48,6 +48,9 @@ const HorizontalGraphic = ({text}) => {
         <div id="no02" class="wrapper-graphic">
         <div class="boxes-graphic">
             <div class="box-graphic">{text}</div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
+            <div class="box-graphic">{text} </div>
             <div class="box-graphic">{text} </div>
             <div class="box-graphic">{text} </div>
             <div class="box-graphic">{text} </div>

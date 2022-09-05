@@ -130,7 +130,7 @@ const Title = styled.h1`
 `
 
 const Left = styled.div`
-    width: 70%;
+    max-width: 70%;
     position: absolute;
     bottom: 15vh;
 
@@ -140,7 +140,7 @@ const Left = styled.div`
         width: 100%;
         margin: 0 auto;
         font-family: 'Urbanist', sans-serif;
-        text-align: left;
+        text-align: center;
 
         a {
             text-decoration: underline !important;

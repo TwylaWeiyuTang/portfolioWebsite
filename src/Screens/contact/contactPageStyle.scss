@@ -48,10 +48,11 @@
 
     .text-container {
         position: absolute;
-        width: 50%;
+        max-width: 50%;
         bottom: 5vh;
         right: 0;
         text-align: left;
+        margin-right: 2rem;
 
         h1 {
             font-size: 11rem;
@@ -270,6 +271,17 @@
       }
   }
   }
+}
 
+@media screen and (min-width: 1900px) {
+  .text-container {
+    
+    h1 {
+      font-size: 15rem !important;
 
+      .line-container {
+          height: 15rem !important;
+      }
+  }
+  }
 }

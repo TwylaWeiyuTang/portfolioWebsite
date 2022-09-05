@@ -10,7 +10,7 @@ const HorizontalText = ({text}) => {
         // gsap.set('#no03',{y:120})
 
         var boxWidth = 420,
-            totalWidth = boxWidth * 5,  //  * n of boxes
+            totalWidth = boxWidth * 10,  //  * n of boxes
             no01 = document.querySelectorAll("#no01 .box"),
             // no02 = document.querySelectorAll("#no02 .box"),
             // no03 = document.querySelectorAll("#no03 .box"),
@@ -47,6 +47,9 @@ const HorizontalText = ({text}) => {
         <div id="no01" class="wrapper">
         <div class="boxes">
             <div class="box">{text}</div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
+            <div class="box">{text} </div>
             <div class="box">{text} </div>
             <div class="box">{text} </div>
             <div class="box">{text} </div>

@@ -130,7 +130,7 @@ const Title = styled.h1`
 `
 
 const Left = styled.div`
-    width: 70%;
+    max-width: 70%;
     position: absolute;
     bottom: 15vh;
 
