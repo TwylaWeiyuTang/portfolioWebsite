@@ -88,7 +88,7 @@ cursorScale.forEach(link => {
     >
         <ScrollTriggerProxy />
         <AnimatePresence>
-        <main className='App' data-scroll-container ref={containerRef}>
+        <main className='App' data-scroll-container ref={containerRef} style={{overflowX: "hidden"}}>
         {/* <div className="cursor"></div> */}
         
         <Routes>
