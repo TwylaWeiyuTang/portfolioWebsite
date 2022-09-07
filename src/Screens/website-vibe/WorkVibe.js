@@ -7,6 +7,8 @@ const Section = styled.section`
     position: relative;
     height: auto;
     width: 100vw;
+    padding-top: 100px;
+    padding-bottom: 100px;
     margin: 0 auto;
     overflow: hidden;
     color: black;
