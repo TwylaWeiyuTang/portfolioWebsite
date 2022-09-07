@@ -49,8 +49,13 @@ const Button = styled.div`
       border: 2px solid black;
       padding: 5px 30px 5px 30px;
       border-radius: 30px;
+      color: black;
       background-color: transparent;
       cursor: default;
+
+      a {
+        color: black;
+      }
 
       :nth-child(1) {
         border: none;
