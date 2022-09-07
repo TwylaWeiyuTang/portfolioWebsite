@@ -167,7 +167,7 @@ const WebDevelopment = () => {
           <Product img={img1} title='Ozone therapy' />
           
       </Right>
-      <HorizontalLeft text={"Development \u00a0  •"}  />
+      <HorizontalLeft text={"Development \u00a0  • \u00a0"}  />
   </Section>
     </div>
   )

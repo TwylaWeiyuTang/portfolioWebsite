@@ -9,7 +9,7 @@ const HorizontalGraphic = ({text}) => {
         // gsap.set('#no02',{y:50})
         // gsap.set('#no03',{y:120})
 
-        var boxWidth = 370,
+        var boxWidth = 390,
             totalWidth = boxWidth * 9,  //  * n of boxes
             no02 = document.querySelectorAll("#no02 .box-graphic"),
             // no02 = document.querySelectorAll("#no02 .box"),

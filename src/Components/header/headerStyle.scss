@@ -16,3 +16,40 @@
           }
   }
 }
+
+.navbar-brand {
+  z-index: 10;
+}
+
+.navbar-light .navbar-toggler {
+  z-index: 10 !important;
+  mix-blend-mode: difference;
+}
+
+.navbar-toggler {
+  background-color: rgba(0, 0, 0, .3)!important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='white' fill='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    z-index: 2 !important;
+    background-color: #eaeaea;
+  
+    .navbar-nav {
+      margin-top: 40vh;
+      color: black !important;
+    }
+  }
+}

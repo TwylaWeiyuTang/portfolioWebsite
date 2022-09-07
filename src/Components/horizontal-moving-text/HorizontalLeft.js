@@ -9,7 +9,7 @@ const HorizontalLeft = ({text}) => {
         // gsap.set('#no02',{y:50})
         // gsap.set('#no03',{y:120})
 
-        var boxWidth = 610,
+        var boxWidth = 630,
             totalWidth = boxWidth * 6,  //  * n of boxes
             no02 = document.querySelectorAll("#no02 .box-left"),
             // no02 = document.querySelectorAll("#no02 .box"),
