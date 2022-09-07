@@ -25,7 +25,7 @@ const Header = () => {
         <div className='header'>
             <Navbar scrolling expand="lg">
             <Container style={{maxWidth: "95vw"}}>
-                <Navbar.Brand as={NavLink} to="/"><TLogo style={{width: "80%"}}/></Navbar.Brand>
+                <Navbar.Brand as={NavLink} to="/"><TLogo style={{width: "15vw"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className="ms-auto" ref={navColor}>
