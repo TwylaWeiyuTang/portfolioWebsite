@@ -12,7 +12,7 @@ const Section = styled.section`
     height: auto;
     width: 100vw;
     margin: 0 auto;
-    padding: 100px 0%;
+    padding: 100px 0vw;
     overflow: hidden;
     color: black;
 
