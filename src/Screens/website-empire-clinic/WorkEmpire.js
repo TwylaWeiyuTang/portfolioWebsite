@@ -11,8 +11,8 @@ const Section = styled.section`
     position: relative;
     height: auto;
     width: 100vw;
+    /* padding: 100px 0vw; */
     margin: 0 auto;
-    padding: 100px 0vw;
     overflow: hidden;
     color: black;
 
