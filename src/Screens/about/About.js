@@ -6,7 +6,7 @@ import portrait from '../../images/portrait.jpg'
 const About = () => {
   
   return (
-    <div className='about' >
+    <div >
         <div className="c-section" data-scroll-section data-persistent>
                 <div className="o-container" id="fixed-elements" data-textcolor="#032f35" data-bgcolor="#bcb8ad">
                     <div className="o-layout">

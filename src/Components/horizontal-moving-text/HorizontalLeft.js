@@ -42,6 +42,9 @@ const HorizontalLeft = ({text}) => {
         // .add(marquee(no02, 20, dirFromLeft), 2)
         // .add(marquee(no03, 20, dirFromRight), 3)
 
+        return() => {
+            gsap.timeline.kill()
+        }
             })
     return (
         <>

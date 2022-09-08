@@ -144,7 +144,9 @@ const GraphicDesign = () => {
       return () => {
           // Let's clear instances
           tl1.kill()
-          ScrollTrigger.kill()
+          ScrollTrigger.getAll().forEach((instance) => {
+            instance.kill();
+          });
       }
   })
 

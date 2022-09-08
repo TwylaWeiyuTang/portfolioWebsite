@@ -48,6 +48,10 @@ const ContactPage = () => {
         each: .15
       }
     });
+
+    return() => {
+      headlineTL.kill()
+    }
   }, [headlineTL])
 
   return (

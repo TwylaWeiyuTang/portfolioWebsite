@@ -277,7 +277,9 @@ const GsapDisplore = () => {
       return () => {
           // Let's clear instances
           tl.kill()
-          ScrollTrigger.kill()
+          ScrollTrigger.getAll().forEach((instance) => {
+            instance.kill();
+          });
       }
   })
 return (

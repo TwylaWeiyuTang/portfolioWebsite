@@ -51,7 +51,9 @@ const Hero = () => {
                 //         yPercent: 100,
                 //         ease: "power4",
                 //   })
-                
+                return() => {
+                        tl.kill()
+                }
                 }, [tl])
 
   return (
