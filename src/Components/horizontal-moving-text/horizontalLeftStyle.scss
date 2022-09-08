@@ -23,6 +23,7 @@
 
 @media screen and (max-width: 600px) {
   .wrapper-left {
+    transform: translate(-50%, 50%) !important;
     width: 200% !important;
   }
 }
