@@ -34,6 +34,10 @@ const Right = styled.div`
         width: 40rem;
         margin-right: 6rem;
     }
+
+    @media screen and (max-width: 600px) {
+        top: 30vh;
+    }
 `
 
 const Item = styled(motion.div)`
