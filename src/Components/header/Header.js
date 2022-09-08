@@ -8,6 +8,14 @@ const Header = () => {
     const location = useLocation()
     let navColor = useRef()
 
+    const handleCollapse = () => {
+        console.log("handleCollapse");
+        var nav = document.getElementById("basic-navbar-nav");
+        // var btn = document.getElementById("navbarBtn");
+        nav.classList.remove("show");
+        // btn.classList.add("collapsed");
+      };
+
     useLayoutEffect(()=>
     { 
         if(location.pathname === '/'){
@@ -29,9 +37,15 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className="ms-auto" ref={navColor}>
-                    <Nav.Link as={NavLink} to='/#work' className='header-items ' >Work</Nav.Link>
-                    <Nav.Link as={NavLink} to="/about-me" className='header-items ' >About</Nav.Link>
-                    <Nav.Link as={NavLink} to="/contact" className=' header-items ' >Contact</Nav.Link>
+                    <Nav.Link as={NavLink} to='/#work' className='header-items ' onClick={handleCollapse}>
+                        Work
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to="/about-me" className='header-items ' onClick={handleCollapse}>
+                        About
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to="/contact" className=' header-items 'onClick={handleCollapse}>
+                        Contact
+                    </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
