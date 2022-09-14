@@ -1,7 +1,7 @@
 import React from 'react'
 import './aboutStyle.scss'
 
-import portrait from '../../images/portrait.jpg'
+import portrait from '../../images/portrait-copy.JPG'
 
 const About = () => {
   

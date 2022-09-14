@@ -352,7 +352,7 @@ $to-colossal:   $from-colossal - 1 !default;
     background-size: cover;
     background-position: center center;
     opacity: 0.75;
-    mix-blend-mode: multiply;
+    // mix-blend-mode: multiply;
 
     html:not(.has-scroll-smooth) & {
         top: 0;

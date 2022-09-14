@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/all'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import HorizontalText from '../../horizontal-moving-text/HorizontalText'
-import img1 from '../../../images/empireThumbnail.png'
+import img1 from '../../../images/graphic-design-1.jpg'
 import './graphicDesignStyle.scss'
 import HorizontalGraphic from '../../horizontal-moving-text/HorizontalGraphic'
 
