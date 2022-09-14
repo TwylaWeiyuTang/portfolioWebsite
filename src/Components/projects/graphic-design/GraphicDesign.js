@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import HorizontalText from '../../horizontal-moving-text/HorizontalText'
 import img1 from '../../../images/graphic-design-1.jpg'
+import img2 from '../../../images/graphic-design-2.jpg'
+import placeholder from '../../../images/placeholder.png'
+
 import './graphicDesignStyle.scss'
 import HorizontalGraphic from '../../horizontal-moving-text/HorizontalGraphic'
 
@@ -45,42 +48,36 @@ const Item = styled(motion.div)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40rem;
+    width: 40vw;
     margin-right: 6rem;
+    height: 58vh;
+    overflow-y: hidden;
+    transition: 1s;
 
     img {
         width: 100%;
-        height: auto;
         cursor: pointer;
         position: relative;
     }
 
-    h4 {
-      display: inline-block;
-        width: fit-content;
-        font-weight: 500;
-        text-align: justify;
-        justify-content: center;
-        position: absolute;
-        visibility: hidden;
-}
-
     &:hover {
-        background-color: black;
-        
-        img{
-            opacity: .8;
-        }
+        overflow-y: visible;
+        z-index: 10;
 
-        h4 {
-            visibility: visible;
-            color: white;
+        :nth-child(2) {
+            transform: scale(1.5);
         }
     }
 
     @media screen and (max-width: 600px) {
     width: 100vw;
     margin-right: 3rem;
+
+    /* :nth-child(2) {
+        &:hover {
+            transform: scale(2);
+        }
+    } */
 }
 `
 
@@ -89,7 +86,6 @@ const Product = ({img, title='', href}) => {
         <Item
         >
             <img src={img} alt={title}/>
-            <h4><a href={href}>{title}</a></h4>
         </Item>
     )
 }
@@ -155,15 +151,10 @@ const GraphicDesign = () => {
         <Section ref={graphicRef} id='shop'>
         <HorizontalText text={"Graphic \u00a0  •"}/>
       <Right ref={graphicHorizontalRef}>
-          <Product img={img1} title='Empire Clinic' href='/work-empire-clinic-website'/>
-          <Product img={img1} title='About us' />
-          <Product img={img1} title='Contact' />
-          <Product img={img1} title='Aesthetic Medicine' />
-          <Product img={img1} title='Dentistry' />
-          <Product img={img1} title='Dermatology' />
-          <Product img={img1} title='Nutrition' />
-          <Product img={img1} title='Cosmetics' />
-          <Product img={img1} title='Ozone therapy' />
+          <Product img={img1} />
+          <Product img={img2} />
+          <Product img={placeholder} />
+          <Product img={placeholder} />
           
       </Right>
       <HorizontalGraphic text={"Design \u00a0  •"} />
