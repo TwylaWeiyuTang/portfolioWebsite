@@ -293,10 +293,6 @@ return (
           <Product video={video2} title='Function Introduction' detail="I created a neon bordered transparent panel, to work with the glass morphism effecr for each individual NFT card. The colorful geometry shapes in the background add an extra layer of dynamic for the section." />
           <Product video={video3} title='Search & Display' detail="Search and Display area is made of one fully customised neon search bar and the top 10 best matched results for the keyword. Each individual NFT is surrounded with neon transparent card, which creates a fantasy vibe."/>
           <Product video={video4} title='Footer' detail="For the footer section, a customised SVG shape is used, and the changing color effect is to work with the changing color effect at the hero section. All the individual social icons are surrounded with neon light effect as well to align with the overall effect of the website."/>
-          {/* <Product img={img1} title='Dermatology' />
-          <Product img={img1} title='Nutrition' />
-          <Product img={img1} title='Cosmetics' />
-          <Product img={img1} title='Ozone therapy' /> */}
           
       </Right>
   </Section>
