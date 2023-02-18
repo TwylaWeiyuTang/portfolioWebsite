@@ -4,9 +4,9 @@ import { ScrollTrigger } from "gsap/all";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import HorizontalText from "../../horizontal-moving-text/HorizontalText";
-import img1 from "../../../images/graphic-design-1.jpg";
-import img2 from "../../../images/graphic-design-2.jpg";
-import img3 from "../../../images/graphic-design-3.jpg";
+import img1 from "../../../images/image-in-frame-1.png";
+import img2 from "../../../images/image-in-frame-2.png";
+import img3 from "../../../images/image-in-frame-3.png";
 import placeholder from "../../../images/placeholder.png";
 
 import "./graphicDesignStyle.scss";
@@ -47,10 +47,10 @@ const Right = styled.div`
 `;
 
 const Item = styled.div`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-end; */
+  align-items: flex-end;
   width: 100%;
   height: 100%;
   /* margin-right: 6rem; */
@@ -61,18 +61,30 @@ const Item = styled.div`
   &#after {
     position: absolute;
     overflow: hidden;
-    top: 0;
+    bottom: 0;
+    transform: translate(0px, 100%);
+  }
+
+  &#after-2 {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
     transform: translate(0px, 100%);
   }
 
   img {
     width: 30%;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
     margin-right: 10vw;
     position: absolute;
-    top: 0;
+    bottom: 0;
 
     &#afterImg {
+      transform: translate(0px, -100%);
+    }
+
+    &#afterImg-2 {
       transform: translate(0px, -100%);
     }
   }
@@ -112,19 +124,23 @@ const GraphicDesign = () => {
   const comparisonRef = useRef(null);
   const graphicHorizontalRef = useRef(null);
   const compImageRef = useRef(null);
+  const imgRef1 = useRef(null);
+  const imgRef2 = useRef(null);
+  const imgRef3 = useRef(null);
+  const comImageRef2 = useRef(null);
 
   useLayoutEffect(() => {
     let element1 = graphicRef.current;
-    console.log(element1);
     let comp = comparisonRef.current;
-    console.log(comp);
     let compImage = compImageRef.current;
-    console.log(compImage);
+    let comp2 = imgRef3.current;
+    let compImage2 = comImageRef2.current;
+
     // let scrollingElement1 = graphicHorizontalRef.current;
 
     // let pinWrapWidth1 = scrollingElement1.offsetWidth;
 
-    let tl1 = gsap.timeline();
+    let tlforColor = gsap.timeline();
     // let tl = gsap.timeline({
     //   scrollTrigger: {
     //     trigger: element1,
@@ -162,6 +178,37 @@ const GraphicDesign = () => {
       });
       tl.fromTo(comp, { yPercent: 100, y: 0 }, { yPercent: 0 });
       tl.fromTo(compImage, { yPercent: -100, y: 0 }, { yPercent: 0 }, 0);
+      tl.fromTo(comp2, { yPercent: 100, y: 0 }, { yPercent: 0 });
+      tl.fromTo(compImage2, { yPercent: -100, y: 0 }, { yPercent: 0 }, 0);
+
+      // tlforColor.to(element1, {
+      //   scrollTrigger: {
+      //     id: "color",
+      //     trigger: comp,
+      //     start: "top top",
+      //     end: "bottom",
+      //     scroller: ".App",
+      //     scrub: true,
+      //     markers: true,
+      //     onEnter: () => {
+      //       gsap.to(".App", {
+      //         duration: 1.0,
+      //         backgroundColor: "#6b0033",
+      //         color: "#006b38",
+      //         overwrite: "auto",
+      //       });
+      //     },
+
+      //     onLeaveBack: () => {
+      //       gsap.to(".App", {
+      //         duration: 1.0,
+      //         backgroundColor: "#EADEDE",
+      //         color: "#4A407E",
+      //         overwrite: "auto",
+      //       });
+      //     },
+      //   },
+      // });
 
       // horizontal scrolling
       // tl1.to(scrollingElement1, {
@@ -183,7 +230,6 @@ const GraphicDesign = () => {
 
     return () => {
       // Let's clear instances
-      tl1.kill();
       ScrollTrigger.getAll().forEach((instance) => {
         instance.kill();
       });
@@ -204,7 +250,7 @@ const GraphicDesign = () => {
         {/* <Product img={img1} />
         <Product img={img3} /> */}
 
-        <Item id="before">
+        <Item id="before" ref={imgRef1}>
           <img src={img1} alt="graphic design 1" />
         </Item>
         <Item ref={comparisonRef} id="after">
@@ -213,6 +259,14 @@ const GraphicDesign = () => {
             alt="graphic design 2"
             id="afterImg"
             ref={compImageRef}
+          />
+        </Item>
+        <Item id="after-2" ref={imgRef3}>
+          <img
+            src={img2}
+            alt="graphic design 3"
+            id="afterImg-2"
+            ref={comImageRef2}
           />
         </Item>
       </Section>
