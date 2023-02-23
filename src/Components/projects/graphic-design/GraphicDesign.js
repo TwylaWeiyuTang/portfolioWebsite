@@ -69,7 +69,7 @@ const Item = styled.div`
     position: absolute;
     overflow: hidden;
     bottom: 0;
-    transform: translate(0px, 100%);
+    transform: translate(0px, 200%);
   }
 
   img {
@@ -77,6 +77,7 @@ const Item = styled.div`
     height: auto;
     overflow: hidden;
     margin-right: 10vw;
+    margin-bottom: 100px;
     position: absolute;
     bottom: 0;
 
@@ -85,7 +86,7 @@ const Item = styled.div`
     }
 
     &#afterImg-2 {
-      transform: translate(0px, -100%);
+      transform: translate(0px, -200%);
     }
   }
 
@@ -110,6 +111,23 @@ const Item = styled.div`
   }
 `;
 
+const Text = styled.div`
+  font-size: 5vw;
+  position: absolute;
+  left: 10%;
+  bottom: 50%;
+  margin-left: 10vw;
+`;
+const Box = styled.div`
+  background-color: #eadede;
+  width: 30%;
+  height: 100px;
+  z-index: 100;
+  margin-right: 10vw;
+  position: absolute;
+  bottom: 0;
+`;
+
 const Product = ({ img, title = "", href }) => {
   return (
     <Item>
@@ -128,6 +146,7 @@ const GraphicDesign = () => {
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
   const comImageRef2 = useRef(null);
+  const boxRef1 = useRef(null);
 
   useLayoutEffect(() => {
     let element1 = graphicRef.current;
@@ -135,6 +154,7 @@ const GraphicDesign = () => {
     let compImage = compImageRef.current;
     let comp2 = imgRef3.current;
     let compImage2 = comImageRef2.current;
+    let box1 = boxRef1.current;
 
     // let scrollingElement1 = graphicHorizontalRef.current;
 
@@ -176,39 +196,107 @@ const GraphicDesign = () => {
         // height: `${scrollingElement1.scrollWidth}px`,
         defaults: { ease: "none" },
       });
-      tl.fromTo(comp, { yPercent: 100, y: 0 }, { yPercent: 0 });
-      tl.fromTo(compImage, { yPercent: -100, y: 0 }, { yPercent: 0 }, 0);
+      tl.add("start");
+      tl.fromTo(comp, { yPercent: 100, y: 0 }, { yPercent: 0 }, "start");
+      tl.fromTo(
+        compImage,
+        { yPercent: -100, y: 0 },
+        { yPercent: 0 },
+        0,
+        "start"
+      );
+      tl.fromTo(comp2, { yPercent: 200, y: 0 }, { yPercent: 100 }, "start");
+      tl.fromTo(
+        compImage2,
+        { yPercent: -200, y: 0 },
+        { yPercent: -100 },
+        0,
+        "start"
+      );
       tl.fromTo(comp2, { yPercent: 100, y: 0 }, { yPercent: 0 });
       tl.fromTo(compImage2, { yPercent: -100, y: 0 }, { yPercent: 0 }, 0);
 
-      // tlforColor.to(element1, {
-      //   scrollTrigger: {
-      //     id: "color",
-      //     trigger: comp,
-      //     start: "top top",
-      //     end: "bottom",
-      //     scroller: ".App",
-      //     scrub: true,
-      //     markers: true,
-      //     onEnter: () => {
-      //       gsap.to(".App", {
-      //         duration: 1.0,
-      //         backgroundColor: "#6b0033",
-      //         color: "#006b38",
-      //         overwrite: "auto",
-      //       });
-      //     },
+      tlforColor
+        .to(element1, {
+          scrollTrigger: {
+            id: "color",
+            trigger: comp,
+            start: "top 70%",
+            end: "bottom",
+            scroller: ".App",
+            scrub: true,
+            markers: true,
+            onEnter: () => {
+              gsap.to(".App", {
+                duration: 1.0,
+                backgroundColor: "#6b0033",
+                color: "#006b38",
+                overwrite: "auto",
+              });
+              gsap.to(box1, {
+                duration: 1.0,
+                backgroundColor: "#6b0033",
+                color: "#006b38",
+                overwrite: "auto",
+              });
+            },
 
-      //     onLeaveBack: () => {
-      //       gsap.to(".App", {
-      //         duration: 1.0,
-      //         backgroundColor: "#EADEDE",
-      //         color: "#4A407E",
-      //         overwrite: "auto",
-      //       });
-      //     },
-      //   },
-      // });
+            onLeaveBack: () => {
+              gsap.to(".App", {
+                duration: 1.0,
+                backgroundColor: "#EADEDE",
+                color: "#4A407E",
+                overwrite: "auto",
+              });
+              gsap.to(box1, {
+                duration: 1.0,
+                backgroundColor: "#EADEDE",
+                color: "#4A407E",
+                overwrite: "auto",
+              });
+            },
+          },
+        })
+        .to(element1, {
+          scrollTrigger: {
+            id: "color",
+            trigger: comp2,
+            start: "top 70%",
+            end: "bottom",
+            scroller: ".App",
+            scrub: true,
+            markers: true,
+            onEnter: () => {
+              gsap.to(".App", {
+                duration: 1.0,
+                backgroundColor: "#fcf300",
+                color: "#072ac8",
+                overwrite: "auto",
+              });
+              gsap.to(box1, {
+                duration: 1.0,
+                backgroundColor: "#fcf300",
+                color: "#072ac8",
+                overwrite: "auto",
+              });
+            },
+
+            onLeaveBack: () => {
+              gsap.to(".App", {
+                duration: 1.0,
+                backgroundColor: "#6b0033",
+                color: "#006b38",
+                overwrite: "auto",
+              });
+              gsap.to(box1, {
+                duration: 1.0,
+                backgroundColor: "#6b0033",
+                color: "#006b38",
+                overwrite: "auto",
+              });
+            },
+          },
+        });
 
       // horizontal scrolling
       // tl1.to(scrollingElement1, {
@@ -252,6 +340,8 @@ const GraphicDesign = () => {
 
         <Item id="before" ref={imgRef1}>
           <img src={img1} alt="graphic design 1" />
+          <Text>01</Text>
+          <Box ref={boxRef1} />
         </Item>
         <Item ref={comparisonRef} id="after">
           <img
