@@ -16,23 +16,27 @@ img {
 a {
   text-decoration: none !important;
   color: inherit !important;
-  
 }
 
 /* .navbar-light .navbar-nav .nav-link {
   color: #eadede !important;
 } */
 
-
-.cursor{
+.cursor {
   position: fixed;
   width: 30px;
   height: 30px;
   margin-left: -20px;
   margin-top: -20px;
   border-radius: 50%;
-  background: linear-gradient(0deg, rgba(79, 50, 255, 0.8), rgba(79, 50, 255, 0.8)), linear-gradient(180deg, #8D7AFF 0%, rgba(149, 132, 255, 0) 100%);
-  box-shadow: 0px 0px 18.92px rgba(164, 149, 255, 0.7), 0px 0px 73.21px rgba(164, 149, 255, 0.5), inset 0px 0px 7.32px #A495FF;
+  background: linear-gradient(
+      0deg,
+      rgba(79, 50, 255, 0.8),
+      rgba(79, 50, 255, 0.8)
+    ),
+    linear-gradient(180deg, #8d7aff 0%, rgba(149, 132, 255, 0) 100%);
+  box-shadow: 0px 0px 18.92px rgba(164, 149, 255, 0.7),
+    0px 0px 73.21px rgba(164, 149, 255, 0.5), inset 0px 0px 7.32px #a495ff;
   filter: blur(0.3px);
   transition: transform 0.3s ease;
   transform-origin: center center;
@@ -40,16 +44,16 @@ a {
   z-index: 1000;
 }
 
-.font-face-L{
+.font-face-L {
   font-family: "Library3am";
- }
+}
 
 /* solve the upscrolling lagging issue caused by locomotive scroll*/
- html.has-scroll-smooth {
+html.has-scroll-smooth {
   overflow: hidden;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;  
+  bottom: 0;
 }

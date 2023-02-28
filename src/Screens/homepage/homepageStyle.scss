@@ -41,14 +41,15 @@
   //     margin-bottom: 5vh;
   //   }
   // }
-  .grow, .grow-small{
+  .grow,
+  .grow-small {
     transform: scale(4);
     background: white;
-    mix-blend-mode: difference; 
+    mix-blend-mode: difference;
     border: none;
   }
-  
-  .grow-small{
+
+  .grow-small {
     transform: scale(2);
   }
 }

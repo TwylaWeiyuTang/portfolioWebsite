@@ -1,24 +1,29 @@
-.wrapper{
-    position:relative;
-    width:150%;
-    height:50px;
-    left:50%;
-    transform: translateY(-450%);
-    // background:grey;
-    z-index: 0;
-  }
-  .wrapper .box{
-    position:absolute;
-    width: fit-content;
-    height:50px;
-    font-size:5rem;
-    font-weight:600;
-    line-height:50px;
-    text-align:center;
-  }
-  .wrapper .boxes {
-    position:relative;
-    left:-250px;
+.wrapper {
+  position: relative;
+  width: 150%;
+  height: 50px;
+  left: 50%;
+  transform: translateY(-450%);
+  // background:grey;
+  z-index: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #9900ff 1px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  -moz-backdrop-filter: blur(3px);
+  background-size: 4px 4px;
+}
+.wrapper .box {
+  position: absolute;
+  width: fit-content;
+  height: 50px;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 50px;
+  text-align: center;
+}
+.wrapper .boxes {
+  position: relative;
+  left: -250px;
 }
 
 @media screen and (max-width: 600px) {
@@ -27,7 +32,6 @@
     width: 160% !important;
   }
 }
-
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {
   .wrapper {
