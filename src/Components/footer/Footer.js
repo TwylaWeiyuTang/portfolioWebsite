@@ -22,7 +22,6 @@ const Footer = () => {
           scroller: ".App",
           scrub: 3,
           toggleActions: "restart pause reverse pause",
-          markers: true,
         },
         xPercent: -100,
         autoAlpha: 0,
@@ -30,6 +29,26 @@ const Footer = () => {
       });
 
       ScrollTrigger.refresh();
+
+      const texts = document.querySelectorAll(".strip-t");
+
+      var boxWidth = 500;
+      gsap.set(texts, {
+        x: function (i) {
+          return i * boxWidth;
+        },
+      });
+
+      gsap.timeline().to(texts, {
+        //   x: -5520,
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % 500),
+        },
+        duration: 25,
+        ease: "none",
+        attr: { startOffset: "-4400" },
+        repeat: -1,
+      });
 
       return () => {
         ScrollTrigger.getAll().forEach((instance) => {
@@ -42,6 +61,96 @@ const Footer = () => {
   return (
     <div className="footer-wrapper">
       <div className="overlay" />
+      <div className="text-path">
+        <svg
+          viewBox="0 0 1282 1000"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0 H1282 M1282 30 V700"
+            stroke=""
+            stroke-width="80"
+            id="path-2"
+            pathLength={5000}
+          />
+          <g className="text-strip-wrapper">
+            <g className="texts">
+              <text dy="2.5%" y="15px" x="0px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="420px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="840px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="1260px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="1680px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="2100px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="2520px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="2940px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="3360px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="3780px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="4200px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+
+              <text dy="2.5%" y="15px" x="4620px">
+                <textPath href="#path-2" className="strip-t">
+                  Have a chat with me
+                </textPath>
+              </text>
+            </g>
+          </g>
+        </svg>
+      </div>
       <div className="text-sec" ref={sec}>
         {/* <h3>You never know what is there waiting for you, until you take the initiative.</h3> */}
         <div>
@@ -123,7 +232,7 @@ const Footer = () => {
             data-scroll-direction="horizontal"
             id="left"
           >
-            &copy; {new Date().getFullYear()} All Rights Reserved.
+            &copy; {new Date().getFullYear()} All <br /> Rights <br /> Reserved
           </span>
           <span
             data-scroll

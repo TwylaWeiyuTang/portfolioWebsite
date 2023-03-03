@@ -16,6 +16,7 @@ import topRight from "../../../images/top-right.png";
 import bottomRight from "../../../images/bottom-right.png";
 import poster1 from "../../../images/poster-01.jpg";
 import poster2 from "../../../images/poster-02.jpg";
+import poster3 from "../../../images/poster-04.jpg";
 
 import "./graphicDesignStyle.scss";
 import HorizontalGraphic from "../../horizontal-moving-text/HorizontalGraphic";
@@ -96,7 +97,7 @@ const Poster = styled.div`
   align-items: flex-start;
   /* position: relative; */
   width: 40rem;
-  margin: 0 100px;
+  margin: 0 200px;
 
   img {
     width: 100%;
@@ -106,13 +107,22 @@ const Poster = styled.div`
   }
 
   &#poster-01 {
+    img {
+      width: 80%;
+    }
   }
 
   &#poster-02 {
     transform: translateY(200px);
+    img {
+      width: 90%;
+    }
   }
 
   &#poster-03 {
+    img {
+      width: 90%;
+    }
   }
 
   &#poster-04 {
@@ -343,7 +353,6 @@ const GraphicDesign = () => {
           start: "top bottom",
           scroller: ".App",
           trigger: graphicRef.current,
-          markers: true,
           toggleActions: "restart pause reverse pause",
         },
         x: 200,
@@ -358,7 +367,6 @@ const GraphicDesign = () => {
           start: "top bottom",
           scroller: ".App",
           trigger: graphicRef.current,
-          markers: true,
           toggleActions: "restart pause reverse pause",
         },
         x: 100,
@@ -653,7 +661,7 @@ const GraphicDesign = () => {
                 src={poster2}
                 alt="poster"
                 data-scroll
-                data-scroll-speed={0}
+                data-scroll-speed={1}
                 data-scroll-direction="horizontal"
               />
             </Mask>
@@ -663,17 +671,17 @@ const GraphicDesign = () => {
           <Poster id="poster-03">
             <Mask className="mask">
               <img
-                src={poster1}
+                src={poster3}
                 alt="poster"
                 data-scroll
                 data-scroll-speed={-1}
                 data-scroll-direction="horizontal"
               />
             </Mask>
-            <h1>02</h1>
+            <h1>03</h1>
           </Poster>
 
-          <Poster id="poster-04">
+          {/* <Poster id="poster-04">
             <Mask className="mask">
               <img
                 src={poster2}
@@ -697,7 +705,7 @@ const GraphicDesign = () => {
               />
             </Mask>
             <h1>02</h1>
-          </Poster>
+          </Poster> */}
         </ImageWapper>
       </ImageSection>
     </div>

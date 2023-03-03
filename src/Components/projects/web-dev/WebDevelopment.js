@@ -167,7 +167,6 @@ const WebDevelopment = () => {
           trigger: scrollingElement,
           start: "180% top",
           scroller: ".App",
-          markers: true,
           scrub: true,
         },
         autoAlpha: 1,

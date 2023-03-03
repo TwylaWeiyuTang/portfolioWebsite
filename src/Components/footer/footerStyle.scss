@@ -1,21 +1,54 @@
 .footer-wrapper {
   position: relative;
-  width: 90vw;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     z-index: -2;
 
     background-image: url(../../images/Noisenoise.png);
     mix-blend-mode: soft-light;
   }
 
+  .text-path {
+    position: absolute;
+    top: 12%;
+    left: 0;
+
+    svg {
+      width: 95vw;
+
+      .text-strip-wrapper {
+        position: relative;
+        width: 250%;
+        height: 80px;
+        right: 50%;
+
+        .texts {
+          position: relative;
+          left: -1050px;
+
+          .strip-t {
+            fill: #eadede;
+            font-family: "library3am";
+            font-size: 2rem;
+            width: fit-content;
+            position: absolute;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
   .text-sec {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 90vw;
     height: 80vh;
     background-color: #201042;
@@ -46,24 +79,24 @@
       position: absolute;
 
       &#contact {
-        width: 280px;
-        height: 95px;
+        width: 23.5%;
+        height: 18.89%;
         background-color: rgba($color: #2e0a52, $alpha: 0.83);
         top: 0;
         right: 20%;
       }
 
       &#instagram {
-        width: 223px;
-        height: 128px;
+        width: 18.73%;
+        height: 28.628%;
         background-color: #210955;
         top: 0;
         left: 10%;
       }
 
       &#email {
-        width: 477px;
-        height: 144px;
+        width: 40.08%;
+        height: 23.63%;
         background-color: #1d0949;
         top: 50%;
         transform: translateY(-50%);
@@ -75,8 +108,8 @@
       }
 
       &#linkedin {
-        width: 232px;
-        height: 177px;
+        width: 16.97%;
+        height: 28.63%;
         background-color: #280672;
         bottom: 28%;
         left: 27%;
@@ -124,15 +157,15 @@
 
         &#left {
           left: -5%;
-          width: 212px;
-          height: 188px;
+          width: 17.82%;
+          height: 32.58%;
           background-color: #302255;
         }
 
         &#right {
           left: 47%;
-          width: 419px;
-          height: 82px;
+          width: 35.21%;
+          height: 12.24%;
           background-color: rgba($color: #2b1078, $alpha: 0.57);
         }
       }
@@ -148,7 +181,7 @@
     }
 
     a {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .footer-bottom {
