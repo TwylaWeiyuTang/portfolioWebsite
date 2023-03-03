@@ -61,6 +61,34 @@ const Section = styled.section`
       right: 0%;
       z-index: -10;
     }
+
+    @media screen and (max-width: 600px) {
+      &#top-left,
+      &#top-right {
+        width: 40%;
+        height: 50%;
+      }
+
+      &#bottom-left,
+      &#bottom-right {
+        width: 50%;
+        height: 60%;
+      }
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1000px) {
+      &#top-left,
+      &#top-right {
+        width: 50%;
+        height: 60%;
+      }
+
+      &#bottom-left,
+      &#bottom-right {
+        width: 60%;
+        height: 70%;
+      }
+    }
   }
 `;
 
@@ -135,6 +163,14 @@ const Poster = styled.div`
     font-size: 70px;
     margin-top: 30px;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 30rem;
+
+    &#poster-02 {
+      transform: translateY(100px);
+    }
+  }
 `;
 
 const Overlay = styled.div`
@@ -156,6 +192,14 @@ const HeaderTop = styled.div`
   top: 10%;
   left: 5%;
   z-index: -9;
+
+  @media screen and (max-width: 600px) {
+    font-size: 70px;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1000px) {
+    font-size: 130px;
+  }
 `;
 
 const HeaderBottom = styled.div`
@@ -165,6 +209,14 @@ const HeaderBottom = styled.div`
   right: 3%;
   transform: rotate(-6.63deg);
   z-index: -9;
+
+  @media screen and (max-width: 600px) {
+    font-size: 100px;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1000px) {
+    font-size: 150px;
+  }
 `;
 // const Right = styled.div`
 //   /* position: relative;
@@ -346,59 +398,120 @@ const GraphicDesign = () => {
     let masks = document.querySelectorAll(".mask");
 
     setTimeout(() => {
-      gsap.from(topL.current, {
-        scrollTrigger: {
-          id: "svg",
-          scrub: 1,
-          start: "top bottom",
-          scroller: ".App",
-          trigger: graphicRef.current,
-          toggleActions: "restart pause reverse pause",
-        },
-        x: 200,
-        transform: "scaleX(2) scaleY(1.5)",
-        ease: "Power2.out",
-      });
+      ScrollTrigger.matchMedia({
+        "(max-width: 600px)": function () {
+          gsap.from(topL.current, {
+            scrollTrigger: {
+              id: "svg",
+              scrub: 1,
+              start: "top bottom",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: 100,
+            transform: "scaleX(3) scaleY(2)",
+            ease: "Power2.out",
+          });
 
-      gsap.from(botL.current, {
-        scrollTrigger: {
-          id: "svg",
-          scrub: 1,
-          start: "top bottom",
-          scroller: ".App",
-          trigger: graphicRef.current,
-          toggleActions: "restart pause reverse pause",
-        },
-        x: 100,
-        y: 100,
-        transform: "scaleX(1.4) scaleY(1.3)",
-        ease: "Power3.inOut",
-      });
+          gsap.from(botL.current, {
+            scrollTrigger: {
+              id: "svg",
+              scrub: 1,
+              start: "top bottom",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: 50,
+            y: 50,
+            transform: "scaleX(2) scaleY(1.5)",
+            ease: "Power3.inOut",
+          });
 
-      gsap.from(topR.current, {
-        scrollTrigger: {
-          scrub: 1,
-          start: "top center",
-          scroller: ".App",
-          trigger: graphicRef.current,
-          toggleActions: "restart pause reverse pause",
+          gsap.from(topR.current, {
+            scrollTrigger: {
+              scrub: 1,
+              start: "top center",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: -100,
+            transform: "scaleX(3) scaleY(2)",
+            ease: "Power2.out",
+          });
+          gsap.from(botR.current, {
+            scrollTrigger: {
+              scrub: 1,
+              start: "top center",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: -50,
+            y: -50,
+            transform: "scaleX(2) scaleY(1.5)",
+            ease: "Power3.inOut",
+          });
         },
-        x: -200,
-        transform: "scaleX(2) scaleY(1.5)",
-        ease: "Power2.out",
-      });
-      gsap.from(botR.current, {
-        scrollTrigger: {
-          scrub: 1,
-          start: "top center",
-          scroller: ".App",
-          trigger: graphicRef.current,
-          toggleActions: "restart pause reverse pause",
+
+        "(min-width: 601px)": function () {
+          gsap.from(topL.current, {
+            scrollTrigger: {
+              id: "svg",
+              scrub: 1,
+              start: "top bottom",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: 200,
+            transform: "scaleX(2) scaleY(1.5)",
+            ease: "Power2.out",
+          });
+
+          gsap.from(botL.current, {
+            scrollTrigger: {
+              id: "svg",
+              scrub: 1,
+              start: "top bottom",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: 100,
+            y: 100,
+            transform: "scaleX(1.4) scaleY(1.3)",
+            ease: "Power3.inOut",
+          });
+
+          gsap.from(topR.current, {
+            scrollTrigger: {
+              scrub: 1,
+              start: "top center",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: -200,
+            transform: "scaleX(2) scaleY(1.5)",
+            ease: "Power2.out",
+          });
+          gsap.from(botR.current, {
+            scrollTrigger: {
+              scrub: 1,
+              start: "top center",
+              scroller: ".App",
+              trigger: graphicRef.current,
+              toggleActions: "restart pause reverse pause",
+            },
+            x: -100,
+            y: -100,
+            transform: "scaleX(1.4) scaleY(1.1)",
+            ease: "Power3.inOut",
+          });
         },
-        x: -100,
-        y: -100,
-        transform: "scaleX(1.4) scaleY(1.1)",
-        ease: "Power3.inOut",
       });
 
       // gsap.to(overlayRef.current, {

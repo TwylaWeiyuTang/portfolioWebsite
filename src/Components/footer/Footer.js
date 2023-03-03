@@ -44,7 +44,7 @@ const Footer = () => {
         modifiers: {
           x: gsap.utils.unitize((x) => parseFloat(x) % 500),
         },
-        duration: 25,
+        duration: 30,
         ease: "none",
         attr: { startOffset: "-4400" },
         repeat: -1,
@@ -63,12 +63,12 @@ const Footer = () => {
       <div className="overlay" />
       <div className="text-path">
         <svg
-          viewBox="0 0 1282 1000"
+          viewBox="0 0 1282 3000"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0 0 H1282 M1282 30 V700"
+            d="M0 0 H1282 M1282 30 V2400"
             stroke=""
             stroke-width="80"
             id="path-2"
@@ -76,73 +76,73 @@ const Footer = () => {
           />
           <g className="text-strip-wrapper">
             <g className="texts">
-              <text dy="2.5%" y="15px" x="0px">
+              <text dy="1%" y="20px" x="0px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="420px">
+              <text dy="1%" y="20px" x="420px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="840px">
+              <text dy="1%" y="20px" x="840px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="1260px">
+              <text dy="1%" y="20px" x="1260px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="1680px">
+              <text dy="1%" y="20px" x="1680px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="2100px">
+              <text dy="1%" y="20px" x="2100px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="2520px">
+              <text dy="1%" y="20px" x="2520px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="2940px">
+              <text dy="1%" y="20px" x="2940px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="3360px">
+              <text dy="1%" y="20px" x="3360px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="3780px">
+              <text dy="1%" y="20px" x="3780px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="4200px">
+              <text dy="1%" y="20px" x="4200px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>
               </text>
 
-              <text dy="2.5%" y="15px" x="4620px">
+              <text dy="1%" y="20px" x="4620px">
                 <textPath href="#path-2" className="strip-t">
                   Have a chat with me
                 </textPath>

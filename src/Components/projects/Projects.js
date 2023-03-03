@@ -26,8 +26,8 @@ const Projects = () => {
           onEnter: () => {
             gsap.to(".App", {
               duration: 1.0,
-              backgroundColor: "#32746C",
-              color: "#EADEDE",
+              backgroundColor: "#708C74",
+              color: "#EAEAEA",
               overwrite: "auto",
             });
           },
@@ -62,8 +62,8 @@ const Projects = () => {
           onLeaveBack: () => {
             gsap.to(".App", {
               duration: 1.0,
-              backgroundColor: "#32746C",
-              color: "#EADEDE",
+              backgroundColor: "#708C74",
+              color: "#EAEAEA",
               overwrite: "auto",
             });
           },

@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
   .overlay {
     position: absolute;
     top: 0;
@@ -174,25 +174,113 @@
 }
 
 @media screen and (max-width: 600px) {
+  .text-path {
+    top: 5% !important;
+    svg {
+      width: 105vw !important;
+    }
+  }
+
   .text-sec {
-    h3 {
-      width: 80vw !important;
-      font-size: 2rem;
+    width: 100vw !important;
+    height: 90vh !important;
+  }
+  a {
+    font-size: 1rem !important;
+
+    &#contact {
+      width: 25.5% !important;
+      height: 16.89% !important;
     }
 
-    a {
-      font-size: 1rem;
+    &#instagram {
+      width: 38.73% !important;
+      height: 18.628% !important;
+      top: 10% !important;
     }
 
-    .footer-bottom {
-      flex-direction: column;
-      justify-content: center;
-      padding: 0;
+    &#email {
+      width: 70.08% !important;
+      height: 13.63% !important;
+      top: 40% !important;
+    }
 
-      span {
-        font-family: "Urbanist", sans-serif;
-        transform: unset !important;
+    &#linkedin {
+      width: 30.97% !important;
+      height: 18.63% !important;
+      top: 53% !important;
+      left: 35% !important;
+    }
+  }
+
+  .footer-bottom {
+    span {
+      font-size: 0.8rem !important;
+      bottom: 0% !important;
+
+      &#left {
+        left: -20% !important;
+        width: 37.82% !important;
+        height: 22.58% !important;
       }
+
+      &#right {
+        left: 70% !important;
+        width: 45.21% !important;
+        height: 12.24% !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .text-path {
+    top: 18% !important;
+    svg {
+      width: 105vw !important;
+    }
+  }
+
+  .text-sec {
+    width: 100vw !important;
+  }
+  a {
+    &#contact {
+      width: 23.5% !important;
+      height: 15.89% !important;
+    }
+
+    &#instagram {
+      width: 28.73% !important;
+      height: 18.628% !important;
+      top: 15% !important;
+    }
+
+    &#email {
+      width: 50.08% !important;
+      height: 13.63% !important;
+      top: 40% !important;
+    }
+
+    &#linkedin {
+      width: 23.97% !important;
+      height: 14.63% !important;
+      top: 53% !important;
+      left: 35% !important;
+    }
+  }
+
+  span {
+    &#left {
+      left: -15% !important;
+      width: 27.82% !important;
+      height: 20.58% !important;
+    }
+
+    &#right {
+      left: 67% !important;
+      width: 40.21% !important;
+      height: 10.24% !important;
     }
   }
 }

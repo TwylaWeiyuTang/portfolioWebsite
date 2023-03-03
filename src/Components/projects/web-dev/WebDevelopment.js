@@ -130,19 +130,20 @@ const WebDevelopment = () => {
 
     let tl = gsap.timeline();
 
+    const el = document.querySelector(".graphic-design");
+
     setTimeout(() => {
       tl.to(element, {
         scrollTrigger: {
           trigger: element,
           start: "top top",
-          end: pinWrapWidth,
+          end: () => "+=" + scrollingElement.offsetWidth,
           scroller: ".App", // locomotive element
-          scrub: true,
+          scrub: 1,
           pin: true,
-          // markers: true
         },
         // we need to increase the scrolling height of this element same as scrolling width
-        height: `${scrollingElement.scrollWidth}px`,
+        // height: `${scrollingElement.scrollWidth}px`,
         ease: "none",
       });
 
@@ -151,10 +152,9 @@ const WebDevelopment = () => {
         scrollTrigger: {
           trigger: scrollingElement,
           start: "top top",
-          end: pinWrapWidth,
+          end: () => "+=" + scrollingElement.offsetWidth,
           scroller: ".App", // locomotive element
-          scrub: true,
-          // markers: true
+          scrub: 1,
         },
         // we need to increase the scrolling height of this element same as scrolling width
         x: -pinWrapWidth,
@@ -165,7 +165,7 @@ const WebDevelopment = () => {
         scrollTrigger: {
           id: "overlay",
           trigger: scrollingElement,
-          start: "180% top",
+          start: () => "+=" + scrollingElement.offsetWidth,
           scroller: ".App",
           scrub: true,
         },
