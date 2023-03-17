@@ -130,8 +130,6 @@ const WebDevelopment = () => {
 
     let tl = gsap.timeline();
 
-    const el = document.querySelector(".graphic-design");
-
     setTimeout(() => {
       tl.to(element, {
         scrollTrigger: {
@@ -171,9 +169,8 @@ const WebDevelopment = () => {
         },
         autoAlpha: 1,
       });
-
-      ScrollTrigger.refresh();
     }, 1000);
+    ScrollTrigger.refresh();
 
     return () => {
       // Let's clear instances
@@ -182,7 +179,7 @@ const WebDevelopment = () => {
         instance.kill();
       });
     };
-  });
+  }, []);
 
   return (
     <div className="web-dev">

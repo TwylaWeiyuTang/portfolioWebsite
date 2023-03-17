@@ -95,9 +95,9 @@ const Arrow = styled.div`
 `;
 
 const Banner = () => {
-  let tlDraw = new gsap.timeline();
-
   useEffect(() => {
+    let tlDraw = gsap.timeline();
+
     const draw = document.querySelectorAll(".draw-me");
 
     tlDraw.to(draw, {
@@ -107,7 +107,11 @@ const Banner = () => {
       yoyo: true,
       repeat: -1,
     });
-  });
+
+    return () => {
+      tlDraw.kill();
+    };
+  }, []);
 
   return (
     <div>

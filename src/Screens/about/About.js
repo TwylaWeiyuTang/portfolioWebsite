@@ -1,91 +1,280 @@
-import React from 'react'
-import './aboutStyle.scss'
+import React, { useEffect, useRef } from "react";
+import "./aboutStyle.scss";
+import portrait from "../../images/bordered-portrait.png";
+import bubbleLeft from "../../images/bubble-right.png";
+import bubbleRight from "../../images/bubble-left.png";
+import bubbleMid from "../../images/bubble-mid.png";
 
-import portrait from '../../images/portrait-copy.JPG'
+import styled from "styled-components";
+import gsap from "gsap";
+import { CustomEase } from "gsap/all";
+
+const Overlay = styled.div`
+  background-image: url(/images/Noise.png);
+  mix-blend-mode: soft-light;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`;
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #735454;
+  color: #eaeaea;
+  text-align: left;
+
+  body {
+    background-color: #735454;
+  }
+
+  #portrait {
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    mix-blend-mode: soft-light;
+    z-index: 2;
+  }
+
+  h3 {
+    font-family: "urbanist", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    position: absolute;
+
+    :nth-of-type(1) {
+      left: 10%;
+      top: 20%;
+      width: 30%;
+    }
+    :nth-of-type(2) {
+      left: 5%;
+      top: 50%;
+      width: 20%;
+    }
+    :nth-of-type(3) {
+      left: 65%;
+      top: 20%;
+      width: 40%;
+    }
+    :nth-of-type(4) {
+      left: 5%;
+      top: 80%;
+      width: 22%;
+    }
+    :nth-of-type(5) {
+      left: 68%;
+      top: 60%;
+      width: 25%;
+    }
+  }
+
+  p {
+    font-family: "abril fatface", serif;
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: 540px) {
+    h3 {
+      font-size: 14px;
+
+      :nth-of-type(4) {
+        left: 10%;
+        top: 75%;
+        width: 22%;
+      }
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width: 541px) and (max-width: 1440px) {
+    h3 {
+      font-size: 24px;
+
+      :nth-of-type(4) {
+        left: 10%;
+        top: 75%;
+        width: 22%;
+      }
+    }
+
+    p {
+      font-size: 30px;
+    }
+  }
+`;
+
+const DroppingImage = styled.div`
+  position: absolute;
+  bottom: 0%;
+  width: 40%;
+  height: 30%;
+
+  img {
+    position: absolute;
+    width: 42%;
+
+    :nth-of-type(1) {
+      bottom: 0%;
+      z-index: 10;
+    }
+    :nth-of-type(2) {
+      bottom: 9%;
+      right: 0%;
+      z-index: 10;
+    }
+    :nth-of-type(3) {
+      bottom: 35%;
+      right: 30%;
+      transform: rotate(3deg);
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 70%;
+    img {
+      width: 50%;
+
+      :nth-of-type(3) {
+        bottom: 23%;
+        right: 30%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 541px) and (max-width: 960px) {
+    width: 60%;
+
+    img {
+      :nth-of-type(3) {
+        bottom: 23%;
+        right: 30%;
+      }
+    }
+  }
+`;
 
 const About = () => {
-  
+  gsap.registerPlugin(CustomEase);
+  let bubbleRefLeft = useRef();
+  let bubbleRefRight = useRef();
+  let bubbleRefMid = useRef();
+
+  useEffect(() => {
+    let tl = gsap.timeline();
+    tl.from(
+      bubbleRefLeft.current,
+      {
+        y: -2000,
+        duration: 4,
+        ease: CustomEase.create(
+          "custom",
+          "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.418,0.963 0.426,1 0.434,0.985 0.436,0.963 0.49,0.912 0.564,0.842 0.638,0.899 0.65,0.91 0.722,0.972 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1"
+        ),
+      },
+      "start"
+    )
+      .from(
+        bubbleRefRight.current,
+        {
+          y: -2000,
+          duration: 4,
+          ease: CustomEase.create(
+            "custom",
+            "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.418,0.963 0.426,1 0.434,0.985 0.436,0.963 0.49,0.912 0.564,0.842 0.638,0.899 0.65,0.91 0.722,0.972 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1"
+          ),
+          delay: 1,
+        },
+        "start"
+      )
+      .from(
+        bubbleRefMid.current,
+        {
+          y: -2000,
+          duration: 4,
+          ease: CustomEase.create(
+            "custom",
+            "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.418,0.963 0.426,1 0.434,0.985 0.436,0.963 0.49,0.912 0.564,0.842 0.638,0.899 0.65,0.91 0.722,0.972 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1"
+          ),
+          delay: 3,
+        },
+        "start"
+      );
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
   return (
-    <div >
-        <div className="c-section" data-scroll-section data-persistent>
-                <div className="o-container" id="fixed-elements" data-textcolor="#032f35" data-bgcolor="#bcb8ad">
-                    <div className="o-layout">
-                        <div className="o-layout_item u-2/5@from-medium">
-                            <div className="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#fixed-elements">
-                                <div className="c-section_infos_inner" data-scroll data-scroll-offset="200">
-                                    <h3>
-                                        Hi! I'm Twyla, a multi-disciplinary web developer based in London, UK.
-                                    </h3>
-                                    <div className="c-sections_infos_text u-text">
-                                        <p>
-                                            On this site, you can find different collections of my work.
-                                        </p>
-                                        <p>
-                                            From UI/UX design to full-stack website development, to graphic designs.
-                                        </p>
-                                        <p>
-                                            I can deliver a comprehensive and quality service. 
-                                        </p>
-                                        <p>
-                                            I am everything you need for a solid, user-friendly and visually-pleasing website.
-                                        </p>
+    <div>
+      <Container>
+        <Overlay />
+        <img
+          src={portrait}
+          alt="me"
+          id="portrait"
+          data-scroll
+          data-scroll-speed="2"
+        />
+        <h3
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="horizontal"
+        >
+          Hi! I'm Twyla, a multi-disciplinary web developer based in{" "}
+          <p>London, UK.</p>
+        </h3>
+        <h3
+          data-scroll
+          data-scroll-speed="-2"
+          data-scroll-direction="horizontal"
+        >
+          On this site, you can find different collections of my work.
+        </h3>
+        {/* <h3>
+          From UI/UX design to full-stack website development, to graphic
+          designs.
+        </h3> */}
+        <h3
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-direction="horizontal"
+        >
+          I can deliver a comprehensive and quality service.
+        </h3>
+        <h3
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-direction="horizontal"
+        >
+          I am everything you need for a solid, user-friendly and
+          visually-pleasing website.
+        </h3>
 
-                                        <p>It doesn't matter if you are in touch for work or just to share your thoughts and ideas with me!
-                                            Let's talk and inspire each other!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="o-layout_item u-3/5@from-medium">
-                            <div className="c-fixed_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
-                                <div className="c-fixed_target" id="fixed-target"></div>
-                                <div className="c-fixed" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-                                    <img src={portrait} alt='about' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='text-sec'>
-                    <h3 >You never know what is there waiting for you, until you take the initiative.</h3>
-                <div>
-                <a href='/contact'>Contact form
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 152.9 43.4" xmlSpace='preserve' xmlnsXlink='http://www.w3.org/1999/xlink' style={{enableBackground: "new 0 0 152.9 43.4"}}>
-                        <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-                      </svg>
-                    </a>
-                    <a href='mailto: twylaweiyutang@outlook.com'>twylaweiyutang@outlook.com
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 152.9 43.4" xmlSpace='preserve' xmlnsXlink='http://www.w3.org/1999/xlink' style={{enableBackground: "new 0 0 152.9 43.4", width: "380px"}}>
-                        <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-                      </svg>
-                    </a>
-                    <a href='https://www.linkedin.com/in/weiyu-tang-297116186/' target='_blank' rel='noreferrer'>linkedin
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 152.9 43.4" xmlSpace='preserve' xmlnsXlink='http://www.w3.org/1999/xlink' style={{enableBackground: "new 0 0 152.9 43.4"}}>
-                        <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-                      </svg>
-                    </a>
-                    <a href='https://www.linkedin.com/in/weiyu-tang-297116186/' target='_blank' rel='noreferrer'>instagram
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 152.9 43.4" xmlSpace='preserve' xmlnsXlink='http://www.w3.org/1999/xlink' style={{enableBackground: "new 0 0 152.9 43.4"}}>
-                        <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-                      </svg>
-                    </a>
-                </div>
-                <div className='footer-bottom'>
-                    <span
-                    data-scroll data-scroll-speed='2' data-scroll-direction="horizontal"
-                    >&copy; {new Date().getFullYear()} All Rights Reserved.</span>
-                    <span
-                    data-scroll data-scroll-speed='-2' data-scroll-direction="horizontal"
-                    >Made with &hearts; by me
-                </span>
-                </div>
+        <h3
+          data-scroll
+          data-scroll-speed="-2"
+          data-scroll-direction="horizontal"
+        >
+          It doesn't matter if you are in touch for work or just to share your
+          thoughts and ideas with me! Let's talk and inspire each other!
+        </h3>
+        <DroppingImage>
+          <img src={bubbleLeft} alt="ui/ux designer" ref={bubbleRefLeft} />
+          <img src={bubbleMid} alt="fullstack developer" ref={bubbleRefRight} />
+          <img src={bubbleRight} alt="graphic designer" ref={bubbleRefMid} />
+        </DroppingImage>
+      </Container>
     </div>
-            </div>
-    </div>
+  );
+};
 
-
-  )
-}
-
-export default About
+export default About;

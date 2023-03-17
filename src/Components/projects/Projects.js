@@ -12,13 +12,14 @@ const Projects = () => {
   let webRef = useRef(null);
   let graphicRef = useRef(null);
 
-  let tl = new gsap.timeline();
-
   useEffect(() => {
+    let tl = gsap.timeline();
+    let tl2 = gsap.timeline();
+
     setTimeout(() => {
-      tl.to(ref, {
+      tl.to(ref.current, {
         scrollTrigger: {
-          trigger: webRef,
+          trigger: webRef.current,
           start: "top 100%",
           end: "bottom",
           scroller: ".App",
@@ -36,16 +37,16 @@ const Projects = () => {
             gsap.to(".App", {
               duration: 1.0,
               backgroundColor: "#F58840",
-              color: "#EADEDE",
+              color: "#eadede",
               overwrite: "auto",
             });
           },
         },
       });
 
-      tl.to(ref, {
+      tl2.to(ref.current, {
         scrollTrigger: {
-          trigger: graphicRef,
+          trigger: graphicRef.current,
           start: "top 100%",
           end: "bottom",
           scroller: ".App",
@@ -74,19 +75,20 @@ const Projects = () => {
     return () => {
       // Let's clear instances
       tl.kill();
+      tl2.kill();
       ScrollTrigger.getAll().forEach((instance) => {
         instance.kill();
       });
     };
-  }, [tl]);
+  }, []);
 
   return (
-    <div className="projects" ref={(el) => (ref = el)}>
-      <div ref={(el) => (webRef = el)}>
+    <div className="projects" ref={ref}>
+      <div ref={webRef}>
         <WebDevelopment />
       </div>
 
-      <div ref={(el) => (graphicRef = el)}>
+      <div ref={graphicRef}>
         <GraphicDesign />
       </div>
     </div>

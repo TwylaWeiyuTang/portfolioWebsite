@@ -10,10 +10,14 @@
     margin-inline-start: 4vw;
     font-weight: 300;
     transition: all 0.5s ease;
-  
-          &:hover {
-              transform: translateY(-5px);
-          }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .ms-auto {
+    color: #eadede;
   }
 }
 
@@ -27,7 +31,7 @@
 }
 
 .navbar-toggler {
-  background-color: rgba(0, 0, 0, .3)!important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -46,7 +50,7 @@
     overflow-y: hidden;
     z-index: 2 !important;
     background-color: #eaeaea;
-  
+
     .navbar-nav {
       margin-top: 40vh;
       color: black !important;

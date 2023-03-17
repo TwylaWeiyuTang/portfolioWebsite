@@ -7,9 +7,9 @@ const Hero = () => {
   let app = useRef(null);
   let title = useRef(null);
 
-  let tl = new gsap.timeline({ delay: 0.8 });
-
   useEffect(() => {
+    let tl = new gsap.timeline({ delay: 0.8 });
+
     const headlineFirst = title.children[0].children[0];
     const headlineSecond = title.children[0].children[1];
 
@@ -52,7 +52,7 @@ const Hero = () => {
     return () => {
       tl.kill();
     };
-  }, [tl]);
+  }, []);
 
   return (
     <div className="top" ref={(el) => (app = el)}>

@@ -218,7 +218,6 @@ const HeaderBottom = styled.div`
     font-size: 150px;
   }
 `;
-// const Right = styled.div`
 //   /* position: relative;
 //   padding-bottom: 56.25%; */
 //   /* position: absolute;
@@ -334,19 +333,6 @@ const GraphicDesign = () => {
   const botR = useRef(null);
 
   const overlayRef = useRef(null);
-  const comparisonRef = useRef(null);
-  const graphicHorizontalRef = useRef(null);
-  const compImageRef = useRef(null);
-  const imgRef1 = useRef(null);
-  const imgRef2 = useRef(null);
-  const imgRef3 = useRef(null);
-  const comImageRef2 = useRef(null);
-  const boxRef1 = useRef(null);
-  const text1 = useRef(null);
-  const text2 = useRef(null);
-  const text3 = useRef(null);
-
-  // useEffect(() => {
   //   setTimeout(() => {
   //     gsap.from(topL.current, {
   //       scrollTrigger: {
@@ -384,13 +370,6 @@ const GraphicDesign = () => {
   // }, []);
 
   useLayoutEffect(() => {
-    //   let element1 = graphicRef.current;
-    //   let comp = comparisonRef.current;
-    //   let compImage = compImageRef.current;
-    //   let comp2 = imgRef3.current;
-    //   let compImage2 = comImageRef2.current;
-    //   let box1 = boxRef1.current;
-
     let tl = gsap.timeline();
 
     let tlforColor = gsap.timeline();
@@ -514,18 +493,6 @@ const GraphicDesign = () => {
         },
       });
 
-      // gsap.to(overlayRef.current, {
-      //   scrollTrigger: {
-      //     id: "overlay",
-      //     scrub: 1,
-      //     start: "top top",
-      //     scroller: ".App",
-      //     trigger: graphicRef.current,
-      //     markers: true,
-      //   },
-      //   autoAlpha: 1,
-      // });
-
       tl.to(imgSec.current, {
         scrollTrigger: {
           id: "horizontal",
@@ -559,13 +526,6 @@ const GraphicDesign = () => {
       masks.forEach((mask) => {
         let image = mask.querySelector("img");
 
-        // let tl2 = gsap.timeline({
-        //   scrollTrigger: {
-        //     trigger: mask,
-        //     toggleActions: "restart none none reset",
-        //   },
-        // });
-
         tl.set(mask, { autoAlpha: 1 });
 
         tl.from(mask, {
@@ -581,7 +541,6 @@ const GraphicDesign = () => {
           ease: "Power2.out",
         });
       });
-      //     tl.add("start");
       //     tl.fromTo(comp, { yPercent: 100, y: 0 }, { yPercent: 0 }, "start");
       //     tl.fromTo(
       //       compImage,
@@ -643,64 +602,18 @@ const GraphicDesign = () => {
             });
           },
         },
-        //             gsap.to(box1, {
-        //               duration: 1.0,
-        //               backgroundColor: "#EADEDE",
-        //               color: "#4A407E",
-        //               overwrite: "auto",
-        //             });
-        //           },
-        //         },
-        //       })
-        //       .to(element1, {
-        //         scrollTrigger: {
-        //           id: "color",
-        //           trigger: comp2,
-        //           start: "top 70%",
-        //           end: "bottom",
-        //           scroller: ".App",
-        //           scrub: true,
-        //           markers: true,
-        //           onEnter: () => {
-        //             gsap.to(".App", {
-        //               duration: 1.0,
-        //               backgroundColor: "#f19c79",
-        //               color: "#072ac8",
-        //               overwrite: "auto",
-        //             });
-        //             gsap.to(box1, {
-        //               duration: 1.0,
-        //               backgroundColor: "#f19c79",
-        //               overwrite: "auto",
-        //             });
-        //           },
-
-        //           onLeaveBack: () => {
-        //             gsap.to(".App", {
-        //               duration: 1.0,
-        //               backgroundColor: "#9ad4d6",
-        //               color: "#101935",
-        //               overwrite: "auto",
-        //             });
-        //             gsap.to(box1, {
-        //               duration: 1.0,
-        //               backgroundColor: "#9ad4d6",
-        //               overwrite: "auto",
-        //             });
-        //           },
-        //         },
       });
-
-      ScrollTrigger.refresh();
     }, 1000);
+    ScrollTrigger.refresh();
 
     return () => {
-      // Let's clear instances
+      tl.kill();
+      tlforColor.kill();
       ScrollTrigger.getAll().forEach((instance) => {
         instance.kill();
       });
     };
-  });
+  }, []);
 
   return (
     <div className="graphic-design">
@@ -717,40 +630,6 @@ const GraphicDesign = () => {
         />
         <HeaderBottom>Design</HeaderBottom>
         <img src={topRight} alt="curved shape" id="top-right" ref={topR} />
-        {/* <HorizontalText text={"Graphic \u00a0  •"} />
-        <Right ref={graphicHorizontalRef}>
-          <Product img={img1} />
-          <Product img={img2} />
-          <Product img={placeholder} />
-          <Product img={placeholder} />
-        </Right>
-        <HorizontalGraphic text={"Design \u00a0  •"} /> */}
-        {/* <Product img={img1} />
-        <Product img={img3} /> */}
-        {/* 
-        <Item id="before" ref={imgRef1}>
-          <img src={img1} alt="graphic design 1" />
-          <Text ref={text1}>01</Text>
-          <Box ref={boxRef1} />
-        </Item>
-        <Item ref={comparisonRef} id="after">
-          <img
-            src={img3}
-            alt="graphic design 2"
-            id="afterImg"
-            ref={compImageRef}
-          />
-          <Text ref={text2}>02</Text>
-        </Item>
-        <Item id="after-2" ref={imgRef3}>
-          <img
-            src={img2}
-            alt="graphic design 3"
-            id="afterImg-2"
-            ref={comImageRef2}
-          />
-          <Text ref={text3}>03</Text>
-        </Item> */}
       </Section>
       <ImageSection ref={imgSec} data-scroll-container>
         <Overlay />
@@ -793,32 +672,6 @@ const GraphicDesign = () => {
             </Mask>
             <h1>03</h1>
           </Poster>
-
-          {/* <Poster id="poster-04">
-            <Mask className="mask">
-              <img
-                src={poster2}
-                alt="poster"
-                data-scroll
-                data-scroll-speed={0}
-                data-scroll-direction="horizontal"
-              />
-            </Mask>
-            <h1>02</h1>
-          </Poster>
-
-          <Poster id="poster-05">
-            <Mask className="mask">
-              <img
-                src={poster1}
-                alt="poster"
-                data-scroll
-                data-scroll-speed={-1}
-                data-scroll-direction="horizontal"
-              />
-            </Mask>
-            <h1>02</h1>
-          </Poster> */}
         </ImageWapper>
       </ImageSection>
     </div>
