@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { ReactComponent as TLogo } from "../../images/logoT.svg";
@@ -13,6 +13,21 @@ const Header = () => {
     // btn.classList.add("collapsed");
   };
 
+  const location = useLocation();
+  const navTab = useRef();
+
+  useEffect(() => {
+    if (
+      location.pathname === "/work-displore-website" ||
+      location.pathname === "/work-empire-clinic-website" ||
+      location.pathname === "/work-vibe-ecommerce"
+    ) {
+      navTab.current.style.color = "#000";
+    } else {
+      navTab.current.style.color = "#eadede";
+    }
+  }, [location, navTab]);
+
   return (
     <div className="header">
       <Navbar scrolling expand="lg">
@@ -22,7 +37,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto" ref={navTab}>
               <Nav.Link
                 as={NavLink}
                 to="/#work"
