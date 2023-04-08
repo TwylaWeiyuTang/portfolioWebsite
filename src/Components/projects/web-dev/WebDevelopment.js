@@ -11,6 +11,7 @@ import placeholder from "../../../images/placeholder.png";
 
 import { motion } from "framer-motion";
 import HorizontalLeft from "../../horizontal-moving-text/HorizontalLeft";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
   position: relative;
@@ -66,6 +67,19 @@ const Item = styled(motion.div)`
   width: 40rem;
   margin-right: 6rem;
 
+  a {
+    position: relative;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    bottom: -200px;
+    left: -100px;
+    right: -100px;
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -102,10 +116,26 @@ const Item = styled(motion.div)`
     h4 {
       font-size: 1.2rem;
     }
+
+    a::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      bottom: -100px;
+      left: -100px;
+      right: -100px;
+    }
   }
 `;
 
-const Product = ({ img, title = "", href }) => {
+const PageStyleChange = gsap.to(".App", {
+  duration: 1.0,
+  backgroundColor: "#000",
+  color: "#fff",
+  overwrite: "auto",
+});
+
+const Product = ({ img, title = "", href = "/" }) => {
   return (
     <Item>
       <img src={img} alt={title} />
