@@ -18,6 +18,7 @@ import PageLayout from "./Components/PageLayout";
 import WorkDisplore from "./Screens/website-displore/WorkDisplore";
 import WorkVibe from "./Screens/website-vibe/WorkVibe";
 import Loader from "./Components/Loader";
+import WebsitePwc from "./Screens/WebsitePwc";
 
 function App() {
   const containerRef = useRef(null);
@@ -73,6 +74,7 @@ function App() {
             <Routes>
               <Route element={<PageLayout />}>
                 <Route exact path="/" element={<HomeScreen />} />
+                <Route path="work-ft-pwc" element={<WebsitePwc />} />
                 <Route
                   path="work-empire-clinic-website"
                   element={<WorkEmpire />}

@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import classNames from "classnames";
 
 import GsapDisplore from "../../Components/gsap/GsapDisplore";
-import Loader from "../../Components/Loader";
 
 const Section = styled.section`
   position: relative;

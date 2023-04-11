@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/all";
 import img1 from "../../../images/empireThumbnail.png";
 import img2 from "../../../images/sushibathumbnail.png";
 import img3 from "../../../images/vibethumbnail.png";
+import ftPWC from "../../../images/ft-pwc.png";
 import placeholder from "../../../images/placeholder.png";
 
 import { motion } from "framer-motion";
@@ -101,7 +102,7 @@ const Item = styled(motion.div)`
     background-color: black;
 
     img {
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
     h4 {
@@ -217,6 +218,11 @@ const WebDevelopment = () => {
         <Overlay ref={overlayRef} />
         <HorizontalText text={"Website \u00a0  •"} />
         <Right ref={horizontalRef}>
+          <Product
+            img={ftPWC}
+            title="Financial Times × PwC"
+            href="/work-ft-pwc"
+          />
           <Product
             img={img1}
             title="Empire Clinic"

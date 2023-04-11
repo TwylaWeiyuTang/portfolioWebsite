@@ -112,7 +112,7 @@ const Item = styled(motion.div)`
     }
 
     span {
-      font-size: 1rem !important;
+      font-size: 0.9rem !important;
       width: 85% !important;
       left: 10% !important;
     }
