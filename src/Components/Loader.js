@@ -42,8 +42,6 @@ const Loader = () => {
 
   let tl = gsap.timeline();
   useEffect(() => {
-    console.log(wrapper.current.children);
-
     tl.to("body", {
       duration: 0.1,
       css: { overflowY: "hidden" },

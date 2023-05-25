@@ -12,7 +12,7 @@ import placeholder from "../../../images/placeholder.png";
 
 import { motion } from "framer-motion";
 import HorizontalLeft from "../../horizontal-moving-text/HorizontalLeft";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Section = styled.section`
   position: relative;
@@ -65,8 +65,9 @@ const Item = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40rem;
-  margin-right: 6rem;
+  width: ${(props) => (props.loc === "/" ? "40rem" : "30%")};
+  margin-right: ${(props) => (props.loc === "/" ? "6rem" : "0")};
+  margin-bottom: ${(props) => (props.loc !== "/" ? "50px" : "0")};
 
   a {
     position: relative;
@@ -96,6 +97,7 @@ const Item = styled(motion.div)`
     justify-content: center;
     position: absolute;
     visibility: hidden;
+    color: #eadede;
   }
 
   &:hover {
@@ -136,9 +138,15 @@ const PageStyleChange = gsap.to(".App", {
   overwrite: "auto",
 });
 
-const Product = ({ img, title = "", href = "/" }) => {
+export const Product = ({
+  img,
+  title = "",
+  href = "/",
+  className = "",
+  location,
+}) => {
   return (
-    <Item>
+    <Item className={className} loc={location}>
       <img src={img} alt={title} />
       <h4>
         <a href={href}>{title}</a>
@@ -148,6 +156,8 @@ const Product = ({ img, title = "", href = "/" }) => {
 };
 
 const WebDevelopment = () => {
+  const currentLocation = useLocation();
+
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
   const horizontalRef = useRef(null);
@@ -222,23 +232,27 @@ const WebDevelopment = () => {
             img={ftPWC}
             title="Financial Times × PwC"
             href="/work-ft-pwc"
+            location={currentLocation.pathname}
           />
           <Product
             img={img1}
             title="Empire Clinic"
             href="/work-empire-clinic-website"
+            location={currentLocation.pathname}
           />
           <Product
             img={img2}
             title="Displore Recommendation System"
             href="/work-displore-website"
+            location={currentLocation.pathname}
           />
           <Product
             img={img3}
             title="Vibe Ecommerce"
             href="/work-vibe-ecommerce"
+            location={currentLocation.pathname}
           />
-          <Product img={placeholder} />
+          <Product img={placeholder} location={currentLocation.pathname} />
         </Right>
         <HorizontalLeft text={"Development \u00a0  • \u00a0"} />
       </Section>

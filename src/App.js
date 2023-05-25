@@ -19,6 +19,7 @@ import WorkDisplore from "./Screens/website-displore/WorkDisplore";
 import WorkVibe from "./Screens/website-vibe/WorkVibe";
 import Loader from "./Components/Loader";
 import WebsitePwc from "./Screens/WebsitePwc";
+import Works from "./Screens/Works";
 
 function App() {
   const containerRef = useRef(null);
@@ -86,6 +87,7 @@ function App() {
                 <Route path="work-vibe-ecommerce" element={<WorkVibe />} />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="about-me" element={<About />} />
+                <Route path="work" element={<Works />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>

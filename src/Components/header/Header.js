@@ -40,7 +40,7 @@ const Header = () => {
             <Nav className="ms-auto" ref={navTab}>
               <Nav.Link
                 as={NavLink}
-                to="/#work"
+                to="/work"
                 className="header-items "
                 onClick={handleCollapse}
               >
