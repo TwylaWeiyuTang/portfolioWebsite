@@ -8,6 +8,7 @@ import img3 from "../images/vibethumbnail.png";
 import ftPWC from "../images/ft-pwc.png";
 import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(Flip);
 
@@ -24,32 +25,75 @@ const Tab = styled.div`
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 40vh;
+  height: 30vh;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
+  margin-bottom: 100px;
 `;
 
 const TabSelect = styled.button`
   background: none;
   border: none;
-  width: 20%;
+  min-width: 20%;
   color: #eadede;
   cursor: pointer;
   margin: 0 10px;
-  transition: all 0.5s ease;
-  padding-bottom: 0;
-  border-bottom: none;
+  padding-bottom: 5px;
+  font-size: 28px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.5s ease-in-out;
 
-  :hover {
-    transform: translateY(-5px);
+  ::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: #eadede;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  :hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
   }
 
   :active,
   :focus,
   ::selection {
-    padding-bottom: 5px;
-    border-bottom: 2px solid #eadede;
+    font-size: 48px;
+    color: transparent;
+    -webkit-text-stroke: 2px #eadede;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1000px) {
+    font-size: 24px;
+
+    :active,
+    :focus,
+    ::selection {
+      font-size: 36px;
+      color: #eadede;
+      -webkit-text-stroke: unset;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+
+    :active,
+    :focus,
+    ::selection {
+      font-size: 14px;
+      color: #eadede;
+      -webkit-text-stroke: unset;
+    }
   }
 `;
 
@@ -61,12 +105,15 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+  }
 `;
 
 const data = [
   {
     id: 0,
-    name: "ft-pwc",
+    name: "Financial Times × PwC",
     url: "/work-ft-pwc",
     category: "work",
     image: ftPWC,
@@ -74,7 +121,7 @@ const data = [
   },
   {
     id: 1,
-    name: "empire-clinic",
+    name: "Empire Clinic",
     url: "/work-empire-clinic-website",
     category: "work",
     image: img1,
@@ -82,45 +129,42 @@ const data = [
   },
   {
     id: 2,
-    name: "coco-da-explore",
-    url: "/work-coco-da-explore",
+    name: "Coco Da Explorer",
+    url: "/personal-projects-coco-da-explore",
     category: "personal projects",
     image: img2,
     class: "item personal",
   },
   {
     id: 3,
-    name: "displore",
-    url: "/work-coco-da-explore",
+    name: "Displore Recommendation System",
+    url: "/work-displore-website",
     category: "personal projects",
     image: img2,
-    class: "item personal",
+    class: "item work",
+  },
+  {
+    id: 4,
+    name: "Vibe Ecommerce",
+    url: "/work-vibe-ecommerce",
+    category: "personal projects",
+    image: img3,
+    class: "item work",
+  },
+  {
+    id: 5,
+    name: "V&V Properties",
+    url: "/work-vv-properties",
+    category: "work",
+    image: img2,
+    class: "item work",
   },
 ];
 
 const Works = () => {
   const [filter, setFilter] = useState();
-  //   const [isWork, setIsWork] = useState(false);
-  //   const [isPersonal, setIsPersonal] = useState(false);
-
-  //   const handleFilterWorks = () => {
-  //     if (isPersonal) {
-  //       setIsPersonal(false);
-  //     }
-  //     setIsWork(true);
-  //   };
-
-  //   const handleFilterPersonal = () => {
-  //     if (isWork) {
-  //       setIsWork(false);
-  //     }
-  //     setIsPersonal(true);
-  //   };
-
-  //   const handleShowAll = () => {
-  //     setIsPersonal(false);
-  //     setIsWork(false);
-  //   };
+  const tab = useRef();
+  const card = useRef();
 
   const filters = gsap.utils.toArray(".filter"),
     items = gsap.utils.toArray(".item");
@@ -132,8 +176,6 @@ const Works = () => {
   useLayoutEffect(() => {
     const updateFilters = (filterClass) => {
       const state = Flip.getState(items);
-
-      console.log(filterClass);
 
       items.forEach(
         (item) =>
@@ -176,7 +218,7 @@ const Works = () => {
 
   return (
     <Container>
-      <Tab>
+      <Tab ref={tab}>
         <TabSelect
           //   onClick={handleShowAll}
           onClick={(e) => handleFilter(e)}
@@ -202,8 +244,7 @@ const Works = () => {
           Personal Projects
         </TabSelect>
       </Tab>
-      {/* {!isPersonal && !isWork && ( */}
-      <Wrapper>
+      <Wrapper ref={card}>
         {data.map((work, i) => (
           <Product
             key={i}
@@ -214,37 +255,6 @@ const Works = () => {
           />
         ))}
       </Wrapper>
-      {/* )} */}
-      {/* {isPersonal && (
-        <Wrapper>
-          {data
-            .filter((a) => a.category === "personal projects")
-            .map((project, i) => (
-              <Product
-                key={i}
-                img={project.image}
-                title={project.name}
-                href={project.url}
-                className="item personal"
-              />
-            ))}
-        </Wrapper>
-      )}
-      {isWork && (
-        <Wrapper>
-          {data
-            .filter((a) => a.category === "work")
-            .map((project, i) => (
-              <Product
-                key={i}
-                img={project.image}
-                title={project.name}
-                href={project.url}
-                className="item work"
-              />
-            ))}
-        </Wrapper>
-      )} */}
     </Container>
   );
 };

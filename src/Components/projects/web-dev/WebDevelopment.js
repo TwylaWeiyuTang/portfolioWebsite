@@ -112,9 +112,13 @@ const Item = styled(motion.div)`
     }
   }
 
+  @media screen and (min-width: 601px) and (max-width: 1000px) {
+    width: ${(props) => (props.loc === "/" ? "40rem" : "50%")};
+  }
+
   @media screen and (max-width: 600px) {
     width: 100vw;
-    margin-right: 3rem;
+    margin-right: ${(props) => (props.loc === "/" ? "3rem" : "0")};
 
     h4 {
       font-size: 1.2rem;
