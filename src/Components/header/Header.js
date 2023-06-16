@@ -18,9 +18,11 @@ const Header = () => {
 
   useEffect(() => {
     if (
-      location.pathname === "/work-displore-website" ||
-      location.pathname === "/work-empire-clinic-website" ||
-      location.pathname === "/work-vibe-ecommerce"
+      // location.pathname === "/work-displore-website" ||
+      // location.pathname === "/work-empire-clinic-website" ||
+      // location.pathname === "/work-vibe-ecommerce"
+      location.pathname.includes("work") ||
+      location.pathname.includes("project")
     ) {
       navTab.current.style.color = "#000";
     } else {

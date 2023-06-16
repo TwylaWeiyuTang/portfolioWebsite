@@ -101,36 +101,6 @@
   }
 }
 
-@keyframes top-animation {
-  0% {
-    background-image: none;
-  }
-
-  10% {
-    background-image: url(../../images/background_50.PNG);
-    opacity: 10%;
-  }
-
-  // 30% {
-  //   background-image: url(../../images/background_50.PNG);
-  //   opacity: 30%;
-  // }
-
-  // 50% {
-  //   background-image: url(../../images/background_50.PNG);
-  //   opacity: 50%;
-  // }
-
-  // 70% {
-  //   background-image: url(../../images/background_50.PNG);
-  //   opacity: 70%;
-  // }
-
-  100% {
-    background-image: url(../../images/background_50.PNG);
-  }
-}
-
 @media screen and (max-width: 600px) {
   .text-path-container {
     margin-top: 30vh !important;

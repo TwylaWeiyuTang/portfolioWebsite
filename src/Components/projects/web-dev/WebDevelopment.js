@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/all";
 import img1 from "../../../images/empireThumbnail.png";
 import img2 from "../../../images/sushibathumbnail.png";
 import img3 from "../../../images/vibethumbnail.png";
+import coco from "../../../images/coco.png";
+import vv from "../../../images/covervv.png";
 import ftPWC from "../../../images/ft-pwc.png";
 import placeholder from "../../../images/placeholder.png";
 
@@ -98,6 +100,7 @@ const Item = styled(motion.div)`
     position: absolute;
     visibility: hidden;
     color: #eadede;
+    cursor: pointer;
   }
 
   &:hover {
@@ -254,6 +257,18 @@ const WebDevelopment = () => {
             img={img3}
             title="Vibe Ecommerce"
             href="/work-vibe-ecommerce"
+            location={currentLocation.pathname}
+          />
+          <Product
+            img={coco}
+            title="Coco Da Explorer"
+            href="/personal-projects-coco-da-explore"
+            location={currentLocation.pathname}
+          />
+          <Product
+            img={vv}
+            title="V&V Properties"
+            href="/work-vv-properties"
             location={currentLocation.pathname}
           />
           <Product img={placeholder} location={currentLocation.pathname} />

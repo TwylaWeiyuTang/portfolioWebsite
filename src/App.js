@@ -16,10 +16,12 @@ import Footer from "./Components/footer/Footer";
 import NotFound from "./Screens/not-found/NotFound";
 import PageLayout from "./Components/PageLayout";
 import WorkDisplore from "./Screens/website-displore/WorkDisplore";
+import ProjectCoCo from "./Screens/ProjectCoCo";
 import WorkVibe from "./Screens/website-vibe/WorkVibe";
 import Loader from "./Components/Loader";
 import WebsitePwc from "./Screens/WebsitePwc";
 import Works from "./Screens/Works";
+import WorkVV from "./Screens/WorkVV";
 
 function App() {
   const containerRef = useRef(null);
@@ -85,6 +87,11 @@ function App() {
                   element={<WorkDisplore />}
                 />
                 <Route path="work-vibe-ecommerce" element={<WorkVibe />} />
+                <Route path="work-vv-properties" element={<WorkVV />} />
+                <Route
+                  path="personal-projects-coco-da-explore"
+                  element={<ProjectCoCo />}
+                />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="about-me" element={<About />} />
                 <Route path="work" element={<Works />} />

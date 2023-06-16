@@ -5,6 +5,8 @@ import { Flip } from "gsap/Flip";
 import img1 from "../images/empireThumbnail.png";
 import img2 from "../images/sushibathumbnail.png";
 import img3 from "../images/vibethumbnail.png";
+import coco from "../images/coco.png";
+import vv from "../images/covervv.png";
 import ftPWC from "../images/ft-pwc.png";
 import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
@@ -132,7 +134,7 @@ const data = [
     name: "Coco Da Explorer",
     url: "/personal-projects-coco-da-explore",
     category: "personal projects",
-    image: img2,
+    image: coco,
     class: "item personal",
   },
   {
@@ -156,7 +158,7 @@ const data = [
     name: "V&V Properties",
     url: "/work-vv-properties",
     category: "work",
-    image: img2,
+    image: vv,
     class: "item work",
   },
 ];
