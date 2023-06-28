@@ -10,6 +10,7 @@ import img3 from "../../../images/vibethumbnail.png";
 import coco from "../../../images/coco.png";
 import vv from "../../../images/covervv.png";
 import ftPWC from "../../../images/ft-pwc.png";
+import detex from "../../../images/detex-thumbnail.png";
 import placeholder from "../../../images/placeholder.png";
 
 import { motion } from "framer-motion";
@@ -235,6 +236,12 @@ const WebDevelopment = () => {
         <Overlay ref={overlayRef} />
         <HorizontalText text={"Website \u00a0  •"} />
         <Right ref={horizontalRef}>
+          <Product
+            img={detex}
+            title="Detex Similarity API"
+            href="/personal-projects-detex-text-similarity-api"
+            location={currentLocation.pathname}
+          />
           <Product
             img={ftPWC}
             title="Financial Times × PwC"

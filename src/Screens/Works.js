@@ -7,6 +7,7 @@ import img2 from "../images/sushibathumbnail.png";
 import img3 from "../images/vibethumbnail.png";
 import coco from "../images/coco.png";
 import vv from "../images/covervv.png";
+import detex from "../images/detex-thumbnail.png";
 import ftPWC from "../images/ft-pwc.png";
 import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
@@ -115,6 +116,14 @@ const Wrapper = styled.div`
 const data = [
   {
     id: 0,
+    name: "Detex - Text Similarity API",
+    url: "/personal-projects-detex-text-similarity-api",
+    category: "personal projects",
+    image: detex,
+    class: "item personal",
+  },
+  {
+    id: 1,
     name: "Financial Times × PwC",
     url: "/work-ft-pwc",
     category: "work",
@@ -122,7 +131,7 @@ const data = [
     class: "item work",
   },
   {
-    id: 1,
+    id: 2,
     name: "Empire Clinic",
     url: "/work-empire-clinic-website",
     category: "work",
@@ -130,7 +139,7 @@ const data = [
     class: "item work",
   },
   {
-    id: 2,
+    id: 3,
     name: "Coco Da Explorer",
     url: "/personal-projects-coco-da-explore",
     category: "personal projects",
@@ -138,7 +147,7 @@ const data = [
     class: "item personal",
   },
   {
-    id: 3,
+    id: 4,
     name: "Displore Recommendation System",
     url: "/work-displore-website",
     category: "personal projects",
@@ -146,7 +155,7 @@ const data = [
     class: "item work",
   },
   {
-    id: 4,
+    id: 5,
     name: "Vibe Ecommerce",
     url: "/work-vibe-ecommerce",
     category: "personal projects",
@@ -154,7 +163,7 @@ const data = [
     class: "item work",
   },
   {
-    id: 5,
+    id: 6,
     name: "V&V Properties",
     url: "/work-vv-properties",
     category: "work",

@@ -22,6 +22,7 @@ import Loader from "./Components/Loader";
 import WebsitePwc from "./Screens/WebsitePwc";
 import Works from "./Screens/Works";
 import WorkVV from "./Screens/WorkVV";
+import ProjectDetex from "./Screens/ProjectDetex";
 
 function App() {
   const containerRef = useRef(null);
@@ -91,6 +92,10 @@ function App() {
                 <Route
                   path="personal-projects-coco-da-explore"
                   element={<ProjectCoCo />}
+                />
+                <Route
+                  path="personal-projects-detex-text-similarity-api"
+                  element={<ProjectDetex />}
                 />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="about-me" element={<About />} />

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
-import GsapVV from "../Components/gsap/GsapVV";
+import GsapDetex from "../Components/gsap/GsapDetex";
 
 const Section = styled.section`
   position: relative;
@@ -108,28 +108,28 @@ const Button = styled.div`
 
 const Title = styled.h1`
   font-family: "Abril Fatface";
-  font-size: 10rem;
+  font-size: 8rem;
   line-height: 1;
   margin-bottom: 1rem;
 
   /* -webkit-text-stroke: 2px black; */
   color: white;
   position: fixed;
-  margin-top: 43vh;
+  margin-top: 40vh;
 
   mix-blend-mode: difference;
   /* text-transform: uppercase; */
 
   @media screen and (max-width: 600px) {
     width: 100vw;
-    font-size: 5rem;
-    margin-top: 43vh !important;
+    font-size: 4rem;
+    margin-top: 40vh !important;
     line-height: 1;
   }
 
   @media screen and (min-width: 601px) and (max-width: 1330px) {
-    margin-top: 42vh !important;
-    font-size: 8rem;
+    margin-top: 35vh !important;
+    font-size: 6rem;
   }
 `;
 
@@ -152,7 +152,7 @@ const Left = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    width: 85% !important;
+    width: 90% !important;
     bottom: 8vh;
 
     p {
@@ -162,15 +162,14 @@ const Left = styled.div`
   }
 `;
 
-const WorkVV = () => {
+const ProjectDetex = () => {
   return (
     <>
-      <Section style={{ backgroundColor: "#DFF0FF" }}>
+      <Section style={{ backgroundColor: "#DFDFDF" }}>
         <Button data-scroll data-scroll-speed="-6">
           <button>
-            {/* change the url after they set up the dns*/}
             <a
-              href="https://coco-da-explorer-beta.vercel.app/"
+              href="https://detex-similarity-api.vercel.app"
               target="_blank"
               rel="noreferrer"
             >
@@ -202,22 +201,23 @@ const WorkVV = () => {
         </Button>
 
         <Title data-scroll data-scroll-speed="-6">
-          V&V Properties
+          Detex - Text Similarity API
         </Title>
 
         <Left data-scroll data-scroll-speed="2">
           <p>
-            V&V Properties is one of the UK's premier Flatshare and Letting
-            Agents based in Central London.
+            Detex is a fully integrated API solution to compare text similarity
+            by harnessing state-of-the-art machine learning model created by
+            Open AI.
             <br />
-            The design is prototyped in Figma, and the website is developed with
-            Next.JS.
+            The Detex Similarity API is built with Next.js, TypeScript, Tailwind
+            CSS, Next Auth, Prisma PostgreSQL, and Upstash.
           </p>
         </Left>
       </Section>
-      <GsapVV />
+      <GsapDetex />
     </>
   );
 };
 
-export default WorkVV;
+export default ProjectDetex;
