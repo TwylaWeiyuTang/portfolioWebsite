@@ -168,9 +168,8 @@ const WorkVV = () => {
       <Section style={{ backgroundColor: "#DFF0FF" }}>
         <Button data-scroll data-scroll-speed="-6">
           <button>
-            {/* change the url after they set up the dns*/}
             <a
-              href="https://coco-da-explorer-beta.vercel.app/"
+              href="https://www.vvproperties.co.uk"
               target="_blank"
               rel="noreferrer"
             >
