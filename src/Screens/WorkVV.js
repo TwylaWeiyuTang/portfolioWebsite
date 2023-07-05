@@ -122,7 +122,7 @@ const Title = styled.h1`
 
   @media screen and (max-width: 600px) {
     width: 100vw;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-top: 43vh !important;
     line-height: 1;
   }

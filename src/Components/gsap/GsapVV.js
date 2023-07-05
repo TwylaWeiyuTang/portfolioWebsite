@@ -297,7 +297,13 @@ const GsapVV = () => {
             detail="Used blue, blue-gray and yellow color to convey a trustworthy, reliable and joyful brand image. Used minimalist design to engage the user with the content itself and bring easy accessibility."
           />
           <Product img={img1} title="About Us" detail="" />
-          <Product video={video2} title="Process Walkthrough" detail="" />
+          <Product
+            video={
+              "https://vvproperty-images.s3.eu-west-2.amazonaws.com/Process-walkthrough.webm"
+            }
+            title="Process Walkthrough"
+            detail="Customised icons with theme color - blue, added text, and decorative elements to elevate the visusal appearance, giving a modern touch to the entire icon pack. Step-by-step animations increase user engagement."
+          />
           <Product video={video3} title="Contact Us" detail="" />
           {/* <Product
             video={video4}
